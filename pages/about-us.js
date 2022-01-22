@@ -1,5 +1,9 @@
+import Header from "../components/Header";
+
 const AboutUsPage = () => {
-  return <div />
+  return (
+    <Header />
+  )
 }
 
 export default AboutUsPage;

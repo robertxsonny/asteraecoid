@@ -2,14 +2,14 @@
 
 @layer base {
   html, body {
-    @apply font-serif
+    @apply font-serif text-neutral-700
   }
 
   html, body, #__next {
     @apply h-full
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6, nav {
     @apply font-heading font-bold
   }
 
@@ -25,8 +25,12 @@
     @apply text-[1.75rem]
   }
 
+  p {
+    @apply text-sm
+  }
+
   button, a[role=button] {
-    @apply rounded-lg p-3 font-semibold text-sm tracking-wider
+    @apply text-[0.875rem] rounded-lg p-3 font-semibold text-sm tracking-wider
   }
 }
 
@@ -50,3 +54,8 @@
 }
 
 @tailwind utilities;
+@layer utilities {
+  .page-container {
+    @apply container max-w-5xl
+  }
+}
