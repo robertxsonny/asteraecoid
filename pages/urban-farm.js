@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BenefitIcon from "../components/BenefitIcon";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 
@@ -14,6 +15,15 @@ const UrbanFarmPage = () => {
       >
         <Image src="/images/urbanfarm-hero.jpg" layout="fill" objectFit="cover" />
       </Hero>
+      <section>
+        <div className="page-container pt-24 pb-48"> 
+          <div className="flex justify-between">
+            <BenefitIcon color="emerald" title="100% alami" subtitle="Terbuat dari bahan alami dan ramah lingkungan" />
+            <BenefitIcon color="emerald" title="100% alami" subtitle="Terbuat dari bahan alami dan ramah lingkungan" />
+            <BenefitIcon color="emerald" title="100% alami" subtitle="Terbuat dari bahan alami dan ramah lingkungan" />
+          </div>
+        </div>
+      </section>
     </>
   )
 }

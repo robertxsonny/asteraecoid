@@ -22,7 +22,7 @@
   }
 
   h3 {
-    @apply text-[1.75rem]
+    @apply text-[1.5rem]
   }
 
   p {
@@ -30,7 +30,7 @@
   }
 
   button, a[role=button] {
-    @apply text-[0.875rem] rounded-lg p-3 font-semibold text-sm tracking-wider
+    @apply text-[0.875rem] rounded-lg p-3 font-semibold text-sm tracking-wider drop-shadow-sm hover:drop-shadow-lg transition-all
   }
 }
 
@@ -57,5 +57,9 @@
 @layer utilities {
   .page-container {
     @apply container max-w-5xl
+  }
+
+  .page-container.narrow {
+    @apply max-w-3xl
   }
 }
