@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "name": "Kale Curly",
+    "slug": "kale-curly",
+    "availableFrom": "2022-01-01",
+    "availableUntil": "2022-02-01",
+    "price100gr": 10000,
+    "price250gr": 15000,
+    "price500gr": 28000,
+    "price1kg": 50000,
+    "description": "Dijuluki dengan sebutan ratu sayur Dikarenakan memiliki banyak manfaat untuk Kesehatan tubuh. Tinggi nya kandungan vitamin K , A dan C membuat kale curly baik untuk membantu proses pembekuan darah dalam tubuh dan mampu mengikat kalsium yang bermanfaat untuk tulang. Sayuran ini juga baik untuk menurunkan kolesterol dan membantu mengelola diabetes karna kale mengandung banyak serat."
+  },
+  {
+    "id": 2,
+    "name": "Sawi Pagoda",
+    "slug": "sawi-pagoda",    
+    "availableFrom": "2022-02-01",
+    "availableUntil": "2022-03-01",
+    "price100gr": 4000,
+    "price250gr": 9000,
+    "price500gr": 18000,
+    "price1kg": 35000,
+    "description": "Sayuran cantik ini termasuk dalam keluarga sawi. Sayuran satu ini memiliki bentuk yang unik dengan bentuknya terlihat seperti bunga yang mekar. Mengandung vitamin B kompleks dan protein nabati membuat sayuran ini bagus untuk pembentukan massa otot dan kebugaran tubuh."
+  },
+  {
+    "id": 3,
+    "name": "Naibai",
+    "slug": "naibai",
+    "availableFrom": "2022-01-01",
+    "availableUntil": "2022-02-01",
+    "price100gr": 3000,
+    "price250gr": 7000,
+    "price500gr": 13000,
+    "price1kg": 24000,
+    "description": "Kenalin nih.. nama nya naibai yang bentuknya imut-imut. Masih di kategori keluarga sawi. Sayuran ini biasa diolah menjadi Chinese food. Dimasak dengan paduan jamur dan saus tiram. Rasa nya tidak perlu diragukan lagi."
+  },
+  {
+    "id": 4,
+    "name": "Pakcoy",
+    "slug": "pakcoy",
+    "availableFrom": "2022-01-01",
+    "availableUntil": "2022-02-01",
+    "price100gr": 3000,
+    "price250gr": 7000,
+    "price500gr": 13000,
+    "price1kg": 24000,
+    "description": "Yang suka makan mie dan bakso pasti sudah familiar dengan sayuran ini. Sayuran pakcoy ini sudah jadi pendamping setia. Kurang lengkap kalau makan nggak ada mereka."
+  },
+  {
+    "id": 5,
+    "name": "Caisim",
+    "slug": "caisim",
+    "price100gr": 3000,
+    "price250gr": 7000,
+    "price500gr": 13000,
+    "price1kg": 24000,
+    "description": "Yang suka makan mie dan bakso pasti sudah familiar dengan sayuran ini. Sayuran caisim ini sudah jadi pendamping setia. Kurang lengkap kalau makan nggak ada mereka."
+  },
+  {
+    "id": 6,
+    "name": "Selada Hijau",
+    "slug": "selada-hijau",
+    "availableFrom": "2022-02-01",
+    "availableUntil": "2022-03-01",
+    "price100gr": 3000,
+    "price250gr": 7000,
+    "price500gr": 13000,
+    "price1kg": 25000,
+    "description": "Yang sering makan salad pasti sudah tidak asing dengan sayuran ini. Dicampur mayones, dimakan dengan daging sampai ayam geprek. Rasa segar dan renyah saat dimakan. Enaknya sayuran ini sudah tidak perlu diragukan lagi."
+  },
+  {
+    "id": 7,
+    "name": "Selada Red Rapid",
+    "slug": "selada-red-rapid",
+    "availableFrom": "2022-01-01",
+    "availableUntil": "2022-02-01",
+    "price100gr": 3000,
+    "price250gr": 7000,
+    "price500gr": 13000,
+    "price1kg": 25000,
+    "description": "Yang sering makan salad pasti sudah tidak asing dengan sayuran ini. Dicampur mayones, dimakan dengan daging sampai ayam geprek. Rasa segar dan renyah saat dimakan. Enaknya sayuran ini sudah tidak perlu diragukan lagi."
+  },
+  {
+    "id": 8,
+    "name": "Selada Butterhead",
+    "slug": "selada-butterhead",
+    "availableFrom": "2022-02-01",
+    "availableUntil": "2022-03-01",
+    "price100gr": 4000,
+    "price250gr": 9000,
+    "price1kg": 35000,
+    "description": "Bentuknya yang lebih mirip sayur kol. Sayuran ini masih masuk keluarga selada loh. Tekstur yang lembut dan bentuk cropping yang membuat sayuran ini disebut butterhead."
+  },
+  {
+    "id": 9,
+    "name": "Mizuna",
+    "slug": "mizuna",
+    "price150gr": 15000,
+    "availableFrom": "2022-02-01",
+    "availableUntil": "2022-03-01",
+    "description": "Kenalin nih sayuran dari Jepang. ada yang suka wasabi? Nah sayuran ini cocok sekali buat kamu. Rasa sengir pedasnya terlintas rasa wasabi di lidah, namun tidak sekuat wasabi itu sendiri. Sayuran ini cocok dijadikan pelengkap dalam racikan salad bowl ataupun salad spring roll."
+  }
+]

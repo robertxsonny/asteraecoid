@@ -25,7 +25,19 @@
     @apply text-[1.5rem]
   }
 
-  p {
+  h4 {
+    @apply text-xl
+  }
+
+  h5 {
+    @apply text-lg
+  }
+
+  h6 {
+    @apply text-sm
+  }
+
+  p, ul {
     @apply text-sm
   }
 

@@ -1,11 +1,34 @@
+import Head from "next/head";
 import Image from "next/image";
 import BenefitIcon from "../components/BenefitIcon";
+import FAQ from "../components/FAQ";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
+
+const faqs = [
+  {
+    question: 'Apakah sayuran di asteraeco.id termasuk sayur organik?',
+    answer: 'Sayuran kami termasuk sayur organik'
+  },
+  {
+    question: 'Apakah sayuran di asteraeco.id termasuk sayur organik?',
+    answer: 'Sayuran kami termasuk sayur organik'
+  },
+  {
+    question: 'Apakah sayuran di asteraeco.id termasuk sayur organik?',
+    answer: 'Sayuran kami termasuk sayur organik'
+  }
+]
 
 const EcoprintPage = () => {
   return (
     <>
+      <Head>
+        <title>Ecoprint | Asteraeco.id</title>
+        <meta name="description" content="Ecoprint and Urban Farm in Jogja" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Header />
       <Hero
         color="orange"
@@ -33,7 +56,7 @@ const EcoprintPage = () => {
         </div>
       </section>
       <section>
-        <div className="page-container py-48"> 
+        <div className="page-container py-48">
           <h1 className="text-center text-orange-700 mb-12">Mengapa harus beralih ke ecoprint?</h1>
           <div className="flex justify-between">
             <BenefitIcon color="orange" title="100% alami" subtitle="Terbuat dari bahan alami dan ramah lingkungan" />
@@ -42,6 +65,8 @@ const EcoprintPage = () => {
           </div>
         </div>
       </section>
+      <FAQ color="orange" faqs={faqs} />
+      <Footer />
     </>
   )
 }
