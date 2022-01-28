@@ -2,13 +2,14 @@ import { format, isFuture, isPast, parseISO } from "date-fns";
 import { id } from "date-fns/locale";
 import Head from "next/head";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import BenefitIcon from "../components/BenefitIcon";
 import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import ProductCard from "../components/ProductCard";
+import ProductModal from "../components/ProductModal";
 import veggies from "../urbanfarm-product.json";
 
 const faqs = [
@@ -26,14 +27,60 @@ const faqs = [
   }
 ]
 
+const UrbanFarmProductModal = ({ product, onClose }) => {
+  const { name, description, slug, priceWhole, price100gr, price150gr, price250gr, price500gr, price1kg, availableFrom, availableUntil } = product || {};
+
+  const prices = [
+    priceWhole && `Rp ${priceWhole} / bonggol`,
+    price100gr && `Rp ${price100gr} / 100gr`,
+    price150gr && `Rp ${price150gr} / 150gr`,
+    price250gr && `Rp ${price250gr} / 250gr`,
+    price500gr && `Rp ${price500gr} / 500gr`,
+    price1kg && `Rp ${price1kg} / 1kg`,
+  ].filter(Boolean)
+
+  let status;
+  let primaryCta;
+  let secondaryCta;
+  if (isPast(parseISO(availableFrom)) && isFuture(parseISO(availableUntil))) {
+    status = <span className="text-emerald-500">Stok masih tersedia</span>;
+    primaryCta = <button className="btn-emerald-primary">Pesan sekarang</button>;
+  } else if (isFuture(parseISO(availableFrom))) {
+    status = <span className="text-neutral-600">Segera tersedia {format(parseISO(availableFrom), 'd MMMM yyyy', { locale: id })}</span>;
+    secondaryCta = <button className="btn-emerald-secondary">Tanya ketersediaan lebih lanjut</button>;
+  } else {
+    status = <span className="text-red-800">Stok kosong</span>;
+    secondaryCta = <button className="btn-emerald-secondary">Pesan untuk pre-order</button>;
+  }
+
+  return (
+    <ProductModal
+      open={!!product}
+      onClose={onClose}
+      title={name}
+      description={description}
+      image={`/images/urbanfarm-products/${slug}.jpg`}
+      prices={prices.length > 1 ? prices.map((price) => <>{price}<br /></>) : prices}
+      status={status}
+      primaryCta={primaryCta}
+      secondaryCta={secondaryCta}
+    />
+  )
+}
+
 const UrbanFarmPage = () => {
   const [availableVeggies, setAvailableVeggies] = useState([]);
   const [upcomingVeggies, setUpcomingVeggies] = useState([]);
+  const [activeProduct, setActiveProduct] = useState(null);
 
   useEffect(() => {
     setAvailableVeggies(veggies.filter((v) => isPast(parseISO(v.availableFrom)) && isFuture(parseISO(v.availableUntil))) || []);
     setUpcomingVeggies(veggies.filter((v) => isFuture(parseISO(v.availableFrom))) || []);
   }, [])
+
+  const showProduct = useCallback((product) => setActiveProduct(product));
+
+  const hideProduct  = useCallback(() => setActiveProduct(null));
 
   return (
     <>
@@ -72,7 +119,12 @@ const UrbanFarmPage = () => {
                   const { priceWhole, price100gr, price150gr, price250gr, price500gr, price1kg } = v;
                   const [firstPrice] = [priceWhole, price100gr, price150gr, price250gr, price500gr, price1kg].filter(Boolean);
                   return (
-                    <ProductCard image={`/images/urbanfarm-products/${v.slug}.jpg`} title={v.name} subtitle={`mulai dari Rp ${firstPrice}`} />
+                    <ProductCard
+                      image={`/images/urbanfarm-products/${v.slug}.jpg`}
+                      title={v.name}
+                      subtitle={`mulai dari Rp ${firstPrice}`}
+                      onClick={() => showProduct(v)}
+                    />
                   )
                 })}
               </div>
@@ -92,6 +144,7 @@ const UrbanFarmPage = () => {
                   image={`/images/urbanfarm-products/${v.slug}.jpg`}
                   title={v.name}
                   subtitle={`Tersedia ${format(parseISO(v.availableFrom), 'd MMMM yyyy', { locale: id })}`}
+                  onClick={() => showProduct(v)}
                 />
               ))}
             </div>
@@ -106,6 +159,7 @@ const UrbanFarmPage = () => {
               <ProductCard
                 image={`/images/urbanfarm-products/${v.slug}.jpg`}
                 title={v.name}
+                onClick={() => showProduct(v)}
               />
             ))}
           </div>
@@ -149,6 +203,7 @@ const UrbanFarmPage = () => {
       </section>
       <FAQ color="emerald" faqs={faqs} />
       <Footer />
+      <UrbanFarmProductModal product={activeProduct} onClose={() => hideProduct()} />
     </>
   )
 }
