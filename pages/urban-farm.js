@@ -107,7 +107,7 @@ const UrbanFarmPage = () => {
           </div>
         </div>
       </section>
-      <section className="bg-emerald-100">
+      <section className="bg-emerald-50">
         <div className="page-container py-24 flex">
           <div className="flex-1">
             <h1 className="text-left text-emerald-500 mb-12">Sayuran Tersedia</h1>
@@ -174,7 +174,7 @@ const UrbanFarmPage = () => {
             <p className="mb-24">Bagaimana saya bisa mendapatkan sayuran tersebut</p>
             <div className="flex items-center">
               <div className="flex-1 flex-col items-center">
-                <h2 className="text-emerald-100 mb-6">
+                <h2 className="text-emerald-50 mb-6">
                   Datang dan petik sendiri dari kebun kami
                 </h2>
                 <p className="mb-8">
@@ -187,7 +187,7 @@ const UrbanFarmPage = () => {
               </div>
               <i className="px-20">atau</i>
               <div className="flex-1 flex-col items-center">
-                <h2 className="text-emerald-100 mb-6">
+                <h2 className="text-emerald-50 mb-6">
                   Kami antar GRATIS* ke rumah kamu
                 </h2>
                 <p>*hanya berlaku untuk jarak pengantaran 5km dari kebun.</p>

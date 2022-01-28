@@ -1,10 +1,10 @@
 const benefitClasses = {
   emerald: {
-    iconBg: 'bg-emerald-100',
+    iconBg: 'bg-emerald-50',
     title: 'text-emerald-500'
   },
   orange: {
-    iconBg: 'bg-orange-100',
+    iconBg: 'bg-orange-50',
     title: 'text-orange-700'
   }
 }

@@ -4,11 +4,11 @@ import Link from 'next/link';
 
 const classes = {
   emerald: {
-    background: 'bg-emerald-200/70',
+    background: 'bg-emerald-50/70',
     button: 'btn-emerald-primary'
   },
   orange: {
-    background: 'bg-orange-100/70',
+    background: 'bg-orange-50/70',
     button: 'btn-orange-primary'
   }
 }
@@ -31,7 +31,7 @@ const HomepageCard = ({
         className={`transition-all duration-500 absolute flex flex-col inset-0 p-8 ${active ? classes[color].background : 'bg-neutral-800/70'}`}
       >
         <div className="flex-1" />
-        <h1 className={`text-center text-[1.75rem] ${active ? 'text-neutral-800' : 'text-yellow-100'} uppercase my-2 transition-all duration-500`}>
+        <h1 className={`text-center text-[1.75rem] ${active ? 'text-neutral-800' : 'text-yellow-50'} uppercase my-2 transition-all duration-500`}>
           {title}
         </h1>
         <div className="flex-1">

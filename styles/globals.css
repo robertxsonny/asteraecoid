@@ -49,19 +49,19 @@
 @tailwind components;
 @layer components {
   button.btn-emerald-primary {
-    @apply bg-emerald-500 text-emerald-100
+    @apply bg-emerald-500 text-emerald-50
   }
   
   button.btn-emerald-secondary {
-    @apply bg-emerald-100 text-emerald-500
+    @apply bg-emerald-50 text-emerald-500
   }
 
   button.btn-orange-primary {
-    @apply bg-orange-700 text-orange-100
+    @apply bg-orange-700 text-orange-50
   }
 
   button.btn-orange-secondary {
-    @apply bg-orange-100 text-orange-700
+    @apply bg-orange-50 text-orange-700
   }
 }
 

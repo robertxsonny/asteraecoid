@@ -17,7 +17,7 @@ const FooterLink = ({ children, href }) => {
 
 const Footer = () => {
   return (
-    <section className="bg-yellow-100">
+    <section className="bg-yellow-50">
       <div className="page-container pt-24 flex">
         <div className="flex-1 pr-6">
           <iframe

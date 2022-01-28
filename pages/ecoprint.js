@@ -45,7 +45,7 @@ const EcoprintPage = () => {
         </div>
         <div className="bg-neutral-800/60 h-max">
           <div className="page-container narrow py-48">
-            <h1 className="text-center text-orange-100 mb-6">Sekilas tentang ecoprint</h1>
+            <h1 className="text-center text-orange-50 mb-6">Sekilas tentang ecoprint</h1>
             <p className="text-center text-white">
               Ecoprint adalah Teknik pewarnaan alami menggunakan daun dan bunga sebagai bahan utamanya.
               Jejak-jejak mereka melekat tak hanya di kain saja, tetapi juga bisa di media lainnya seperti kulit, kertas ataupun keramik.
