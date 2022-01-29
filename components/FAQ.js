@@ -8,8 +8,8 @@ const FAQ = ({ color, faqs }) => {
           <h1 className={`text-left ${color === 'emerald' ? 'text-emerald-500' : 'text-orange-700'}`}>FAQ</h1>
         </div>
         <div className="flex-[2]">
-          {(faqs && faqs.length > 0) && faqs.map(({ question, answer }) => (
-            <Disclosure>
+          {(faqs && faqs.length > 0) && faqs.map(({ question, answer }, index) => (
+            <Disclosure key={`${index}-${question}`} >
               <Disclosure.Button className={`text-left ${color === 'emerald' ? 'text-emerald-500' : 'text-orange-700'}`}>
                 <h5>{question}</h5>
               </Disclosure.Button>

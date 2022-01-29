@@ -29,7 +29,7 @@ const ProductModal = ({ open, title, titleColor, description, prices, image, blu
               </div>
             </div>
             <div className="flex-1 relative">
-              <Image className="w-full h-full rounded-lg overflow-clip" src={image} layout="fill" objectFit="cover" {...placeholderProps} />
+              <Image alt={title} className="w-full h-full rounded-lg overflow-clip" src={image} layout="fill" objectFit="cover" {...placeholderProps} />
             </div>
           </div>
         </div>

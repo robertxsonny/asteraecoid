@@ -31,7 +31,7 @@ const HomepageCard = ({
       onMouseLeave={() => setActive(false)}
       className="flex-1 relative"
     >
-      <Image src={image} objectFit="cover" layout="fill" {...placeholderProps} />
+      <Image src={image} alt={title} objectFit="cover" layout="fill" {...placeholderProps} />
       <div
         className={`transition-all duration-500 absolute flex flex-col inset-0 p-8 ${active ? classes[color].background : 'bg-neutral-800/70'}`}
       >

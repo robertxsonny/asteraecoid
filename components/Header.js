@@ -26,7 +26,7 @@ export default function Header({}) {
       <div className="page-container h-full flex justify-between items-center">
         <Link href="/">
           <a className="block relative w-36 h-full">
-            <Image src="/images/asteraeco-text-only.png" priority layout="fill" objectFit="contain" />
+            <Image src="/images/asteraeco-text-only.png" alt="asteraeco" priority layout="fill" objectFit="contain" />
           </a>
         </Link>
         <nav className="flex">

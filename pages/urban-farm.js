@@ -80,9 +80,9 @@ const UrbanFarmPage = () => {
     setUpcomingVeggies(veggies.filter((v) => isFuture(parseISO(v.availableFrom))) || []);
   }, [])
 
-  const showProduct = useCallback((product) => setActiveProduct(product));
+  const showProduct = useCallback((product) => setActiveProduct(product), []);
 
-  const hideProduct  = useCallback(() => setActiveProduct(null));
+  const hideProduct  = useCallback(() => setActiveProduct(null), []);
 
   return (
     <>
@@ -100,6 +100,7 @@ const UrbanFarmPage = () => {
       >
         <Image
           src="/images/urbanfarm/urbanfarm-hero.jpg"
+          alt="urban farm"
           placeholder="blur"
           blurDataURL="/images/urbanfarm/urbanfarm-hero-blur.jpg"
           layout="fill"
@@ -128,6 +129,7 @@ const UrbanFarmPage = () => {
                   const [firstPrice] = [priceWhole, price100gr, price150gr, price250gr, price500gr, price1kg].filter(Boolean);
                   return (
                     <ProductCard
+                      key={v.slug}
                       image={`/images/urbanfarm/products/${v.slug}.jpg`}
                       blurImage={`/images/urbanfarm/products/${v.slug}-blur.jpg`}
                       title={v.name}
@@ -150,6 +152,7 @@ const UrbanFarmPage = () => {
             <div className="flex-1 flex flex-wrap items-center justify-center">
               {upcomingVeggies.map((v) => (
                 <ProductCard
+                  key={v.slug}
                   image={`/images/urbanfarm/products/${v.slug}.jpg`}
                   blurImage={`/images/urbanfarm/products/${v.slug}-blur.jpg`}
                   title={v.name}
@@ -167,6 +170,7 @@ const UrbanFarmPage = () => {
           <div className="flex-1 flex flex-wrap items-center justify-center">
             {veggies.map((v) => (
               <ProductCard
+                key={v.slug}
                 image={`/images/urbanfarm/products/${v.slug}.jpg`}
                 blurImage={`/images/urbanfarm/products/${v.slug}-blur.jpg`}
                 title={v.name}
@@ -180,6 +184,7 @@ const UrbanFarmPage = () => {
         <div className="absolute inset-0 -z-10">
           <Image
             src="/images/urbanfarm/urbanfarm-how-to.jpg"
+            alt="urban farm"
             placeholder="blur"
             blurDataURL="/images/urbanfarm/urbanfarm-how-to-blur.jpg"
             objectFit="cover"

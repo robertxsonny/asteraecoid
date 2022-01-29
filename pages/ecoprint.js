@@ -40,6 +40,7 @@ const EcoprintPage = () => {
       >
         <Image
           src="/images/ecoprint/ecoprint-hero.jpg"
+          alt="ecoprint"
           layout="fill"
           placeholder="blur"
           blurDataURL="/images/ecoprint/ecoprint-hero-blur.jpg"
@@ -50,6 +51,7 @@ const EcoprintPage = () => {
         <div className="absolute inset-0 -z-10">
           <Image
             src="/images/ecoprint/ecoprint-summary.jpg"
+            alt="ecoprint"
             placeholder="blur"
             blurDataURL="/images/ecoprint/ecoprint-summary-blur.jpg"
             objectFit="cover"
@@ -91,6 +93,7 @@ const EcoprintPage = () => {
             <div className="flex-1 aspect-square relative">
               <Image
                 src="/images/ecoprint/ecoprint-apparel-1.jpg"
+                alt="apparel"
                 layout="fill"
                 placeholder="blur"
                 blurDataURL="/images/ecoprint/ecoprint-apparel-1-blur.jpg"
@@ -100,6 +103,7 @@ const EcoprintPage = () => {
             <div className="flex-1 aspect-square relative">
               <Image
                 src="/images/ecoprint/ecoprint-apparel-2.jpg"
+                alt="apparel"
                 layout="fill"
                 placeholder="blur"
                 blurDataURL="/images/ecoprint/ecoprint-apparel-2-blur.jpg"
@@ -111,6 +115,7 @@ const EcoprintPage = () => {
             <div className="flex-1 aspect-square relative">
               <Image
                 src="/images/ecoprint/ecoprint-fabric-1.jpg"
+                alt="fabric"
                 layout="fill"
                 placeholder="blur"
                 blurDataURL="/images/ecoprint/ecoprint-fabric-1-blur.jpg"
@@ -120,6 +125,7 @@ const EcoprintPage = () => {
             <div className="flex-1 aspect-square relative">
               <Image
                 src="/images/ecoprint/ecoprint-fabric-2.jpg"
+                alt="fabric"
                 layout="fill"
                 placeholder="blur"
                 blurDataURL="/images/ecoprint/ecoprint-fabric-2-blur.jpg"
@@ -143,6 +149,7 @@ const EcoprintPage = () => {
             <div className="flex-1 aspect-square relative">
               <Image
                 src="/images/ecoprint/ecoprint-home-decor-1.jpg"
+                alt="home decor"
                 layout="fill"
                 placeholder="blur"
                 blurDataURL="/images/ecoprint/ecoprint-home-decor-1-blur.jpg"
@@ -152,6 +159,7 @@ const EcoprintPage = () => {
             <div className="flex-1 aspect-square relative">
               <Image
                 src="/images/ecoprint/ecoprint-home-decor-2.jpg"
+                alt="home decor"
                 layout="fill"
                 placeholder="blur"
                 blurDataURL="/images/ecoprint/ecoprint-home-decor-2-blur.jpg"
@@ -165,6 +173,7 @@ const EcoprintPage = () => {
         <div className="absolute inset-0 -z-10">
           <Image
             src="/images/ecoprint/ecoprint-summary.jpg"
+            alt="ecoprint"
             placeholder="blur"
             blurDataURL="/images/ecoprint/ecoprint-summary-blur.jpg"
             objectFit="cover"
@@ -182,7 +191,7 @@ const EcoprintPage = () => {
               </p>
               <Link href="https://www.tokopedia.com/asteraecoid">
                 <a className="block relative w-full h-10">
-                  <Image src="/images/tokopedia.png" priority layout="fill" objectFit="contain" />
+                  <Image src="/images/tokopedia.png" alt="tokopedia" priority layout="fill" objectFit="contain" />
                 </a>
               </Link>
             </div>

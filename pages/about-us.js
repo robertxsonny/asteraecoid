@@ -20,6 +20,7 @@ const AboutUsPage = () => {
               <Image
                 src="/images/about-us/about-us-main.jpg"
                 placeholder="blur"
+                alt="About Us"
                 blurDataURL="/images/about-us/about-us-main-blur.jpg"
                 layout="fill"
                 objectFit="cover"
@@ -30,6 +31,7 @@ const AboutUsPage = () => {
                 <Image
                   src="/images/about-us/about-us-1.jpg"
                   placeholder="blur"
+                  alt="About Us"
                   blurDataURL="/images/about-us/about-us-1-blur.jpg"
                   layout="fill"
                   objectFit="cover"
@@ -39,6 +41,7 @@ const AboutUsPage = () => {
                 <Image
                   src="/images/about-us/about-us-2.jpg"
                   placeholder="blur"
+                  alt="About Us"
                   blurDataURL="/images/about-us/about-us-2-blur.jpg"
                   layout="fill"
                   objectFit="cover"
@@ -50,6 +53,7 @@ const AboutUsPage = () => {
                 <Image
                   src="/images/about-us/about-us-3.jpg"
                   placeholder="blur"
+                  alt="About Us"
                   blurDataURL="/images/about-us/about-us-3-blur.jpg"
                   layout="fill"
                   objectFit="cover"
@@ -58,6 +62,7 @@ const AboutUsPage = () => {
               <div className="flex-1 aspect-square relative overflow-clip rounded-lg">
                 <Image
                   src="/images/about-us/about-us-4.jpg"
+                  alt="About Us"
                   placeholder="blur"
                   blurDataURL="/images/about-us/about-us-4-blur.jpg"
                   layout="fill"
@@ -70,7 +75,7 @@ const AboutUsPage = () => {
             <div className="rounded-lg bg-orange-50 -ml-6 mt-24 p-12">
               <div className="flex items-center">
                 <h1 className="text-emerald-500 mr-4">Tentang</h1>
-                <Image src="/images/asteraeco-text-only.png" priority width="175" height="48" objectFit="contain" />
+                <Image src="/images/asteraeco-text-only.png" alt="asteraeco" priority width="175" height="48" objectFit="contain" />
               </div>
               <p className="pt-6">
                 Memiliki kebun hidroponik merupakan cita-cita kami setelah menikah.
