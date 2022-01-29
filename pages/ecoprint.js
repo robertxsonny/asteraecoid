@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import BenefitIcon from "../components/BenefitIcon";
 import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
@@ -32,16 +33,28 @@ const EcoprintPage = () => {
       <Header />
       <Hero
         color="orange"
-        title="Ecoprint di mana saja"
+        title="Ecoprint unik untuk semua"
         subtitle="Tampil cantik dan unik tanpa merusak lingkungan."
         primaryButtonText="Cari produk tersedia"
         secondaryButtonText="Buat produk sendiri"
       >
-        <Image src="/images/ecoprint-hero.jpg" layout="fill" objectFit="cover" />
+        <Image
+          src="/images/ecoprint/ecoprint-hero.jpg"
+          layout="fill"
+          placeholder="blur"
+          blurDataURL="/images/ecoprint/ecoprint-hero-blur.jpg"
+          objectFit="cover"
+        />
       </Hero>
       <section className="relative h-max">
         <div className="absolute inset-0 -z-10">
-          <Image src="/images/ecoprint-summary.jpg" objectFit="cover" layout="fill" />
+          <Image
+            src="/images/ecoprint/ecoprint-summary.jpg"
+            placeholder="blur"
+            blurDataURL="/images/ecoprint/ecoprint-summary-blur.jpg"
+            objectFit="cover"
+            layout="fill"
+          />
         </div>
         <div className="bg-neutral-800/60 h-max">
           <div className="page-container narrow py-48">
@@ -55,13 +68,135 @@ const EcoprintPage = () => {
           </div>
         </div>
       </section>
-      <section>
-        <div className="page-container py-48">
+      <section className="bg-neutral-100">
+        <div className="page-container py-24">
           <h1 className="text-center text-orange-700 mb-12">Mengapa harus beralih ke ecoprint?</h1>
           <div className="flex justify-between">
             <BenefitIcon color="orange" title="100% alami" subtitle="Terbuat dari bahan alami dan ramah lingkungan" />
             <BenefitIcon color="orange" title="100% alami" subtitle="Terbuat dari bahan alami dan ramah lingkungan" />
             <BenefitIcon color="orange" title="100% alami" subtitle="Terbuat dari bahan alami dan ramah lingkungan" />
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="page-container narrow pt-24 pb-40">
+          <h1 className="text-center text-orange-700 mb-16">Lini produk kami</h1>
+          <div className="flex items-center bg-orange-50">
+            <div className="flex-1">
+              <h3 className="text-orange-700 mb-3 px-4">Apparel</h3>
+              <p className="text-neutral-600 text-sm px-4">
+                Atasan, bawahan, outer, dan aksesoris wanita.
+              </p>
+            </div>
+            <div className="flex-1 aspect-square relative">
+              <Image
+                src="/images/ecoprint/ecoprint-apparel-1.jpg"
+                layout="fill"
+                placeholder="blur"
+                blurDataURL="/images/ecoprint/ecoprint-apparel-1-blur.jpg"
+                objectFit="cover"
+              />
+            </div>
+            <div className="flex-1 aspect-square relative">
+              <Image
+                src="/images/ecoprint/ecoprint-apparel-2.jpg"
+                layout="fill"
+                placeholder="blur"
+                blurDataURL="/images/ecoprint/ecoprint-apparel-2-blur.jpg"
+                objectFit="cover"
+              />
+            </div>
+          </div>
+          <div className="flex items-center bg-orange-50">
+            <div className="flex-1 aspect-square relative">
+              <Image
+                src="/images/ecoprint/ecoprint-fabric-1.jpg"
+                layout="fill"
+                placeholder="blur"
+                blurDataURL="/images/ecoprint/ecoprint-fabric-1-blur.jpg"
+                objectFit="cover"
+              />
+            </div>
+            <div className="flex-1 aspect-square relative">
+              <Image
+                src="/images/ecoprint/ecoprint-fabric-2.jpg"
+                layout="fill"
+                placeholder="blur"
+                blurDataURL="/images/ecoprint/ecoprint-fabric-2-blur.jpg"
+                objectFit="cover"
+              />
+            </div>
+            <div className="flex-1">
+              <h3 className="text-orange-700 mb-3 px-4">Fabric</h3>
+              <p className="text-neutral-600 text-sm px-4">
+                Tersedia kain ecoprint utuh maupun kain ecoprint untuk hijab &amp; pashmina
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center bg-orange-50">
+            <div className="flex-1">
+              <h3 className="text-orange-700 mb-3 px-4">Home Decor</h3>
+              <p className="text-neutral-600 text-sm px-4">
+                Gelas, mini bag, pigura, gantungan kunci, dan pernak pernik lainnya.
+              </p>
+            </div>
+            <div className="flex-1 aspect-square relative">
+              <Image
+                src="/images/ecoprint/ecoprint-home-decor-1.jpg"
+                layout="fill"
+                placeholder="blur"
+                blurDataURL="/images/ecoprint/ecoprint-home-decor-1-blur.jpg"
+                objectFit="cover"
+              />
+            </div>
+            <div className="flex-1 aspect-square relative">
+              <Image
+                src="/images/ecoprint/ecoprint-home-decor-2.jpg"
+                layout="fill"
+                placeholder="blur"
+                blurDataURL="/images/ecoprint/ecoprint-home-decor-2-blur.jpg"
+                objectFit="cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="relative h-max">
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/images/ecoprint/ecoprint-summary.jpg"
+            placeholder="blur"
+            blurDataURL="/images/ecoprint/ecoprint-summary-blur.jpg"
+            objectFit="cover"
+            layout="fill"
+          />
+        </div>
+        <div className="bg-neutral-800/60 h-max text-white text-center">
+          <div className="page-container py-48 flex items-stretch">
+            <div className="flex-1 flex-col items-center py-4 px-12 border-r border-orange-50">
+              <h2 className="text-orange-50 mb-6">
+                Ingin membeli produk jadi?
+              </h2>
+              <p className="mb-8">
+                Kunjungi etalase lengkap produk asteraeco.id di
+              </p>
+              <Link href="https://www.tokopedia.com/asteraecoid">
+                <a className="block relative w-full h-10">
+                  <Image src="/images/tokopedia.png" priority layout="fill" objectFit="contain" />
+                </a>
+              </Link>
+            </div>
+            <div className="flex-1 flex-col items-center py-4 px-12">
+              <h2 className="text-orange-50 mb-6">
+                Ingin buat produkmu sendiri?
+              </h2>
+              <p className="mb-8">
+                Kamu bisa memesan produk asteraeco.id secara custom
+              </p>
+              <button className="btn-orange-secondary">
+                Hubungi kami untuk custom order
+              </button>
+            </div>
           </div>
         </div>
       </section>

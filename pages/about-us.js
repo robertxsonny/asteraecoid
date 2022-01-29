@@ -14,15 +14,63 @@ const AboutUsPage = () => {
       <Header />
 
       <section>
-        <div className="page-container narrow py-24 flex">
+        <div className="page-container pt-12 pb-24 flex">
           <div className="flex-1">
-
+            <div className="aspect-[3/4] relative overflow-clip rounded-t-full rounded-b-lg">
+              <Image
+                src="/images/about-us/about-us-main.jpg"
+                placeholder="blur"
+                blurDataURL="/images/about-us/about-us-main-blur.jpg"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+            <div className="flex mt-3 space-x-3">
+              <div className="flex-1 aspect-square relative overflow-clip rounded-lg">
+                <Image
+                  src="/images/about-us/about-us-1.jpg"
+                  placeholder="blur"
+                  blurDataURL="/images/about-us/about-us-1-blur.jpg"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+              <div className="flex-1 aspect-square relative overflow-clip rounded-lg">
+                <Image
+                  src="/images/about-us/about-us-2.jpg"
+                  placeholder="blur"
+                  blurDataURL="/images/about-us/about-us-2-blur.jpg"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+            </div>
+            <div className="flex mt-3 space-x-3">
+              <div className="flex-1 aspect-square relative overflow-clip rounded-lg">
+                <Image
+                  src="/images/about-us/about-us-3.jpg"
+                  placeholder="blur"
+                  blurDataURL="/images/about-us/about-us-3-blur.jpg"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+              <div className="flex-1 aspect-square relative overflow-clip rounded-lg">
+                <Image
+                  src="/images/about-us/about-us-4.jpg"
+                  placeholder="blur"
+                  blurDataURL="/images/about-us/about-us-4-blur.jpg"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+            </div>
           </div>
           <div className="flex-[2]">
-            <div className="rounded-lg bg-orange-50 -mr-8 p-12">
+            <div className="rounded-lg bg-orange-50 -ml-6 mt-24 p-12">
               <div className="flex items-center">
                 <h1 className="text-emerald-500 mr-4">Tentang</h1>
-                <Image src="/images/asteraeco-text-only.png" width="175" height="48" objectFit="contain" />
+                <Image src="/images/asteraeco-text-only.png" priority width="175" height="48" objectFit="contain" />
               </div>
               <p className="pt-6">
                 Memiliki kebun hidroponik merupakan cita-cita kami setelah menikah.

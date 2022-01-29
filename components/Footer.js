@@ -1,4 +1,3 @@
-import GoogleMapReact from "google-map-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -28,7 +27,7 @@ const Footer = () => {
           />
         </div>
         <div className="flex-1 pl-6">
-          <Image src="/images/asteraeco-text-only.png" width="175" height="56" objectFit="contain" />
+          <Image src="/images/asteraeco-text-only.png" priority width="175" height="56" objectFit="contain" />
           <p className="font-bold my-4">
             Jl. Pusung II, Banteng, Sinduharjo, Sleman Regency, Special Region of Yogyakarta
           </p>

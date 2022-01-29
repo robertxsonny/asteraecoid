@@ -58,8 +58,10 @@ const UrbanFarmProductModal = ({ product, onClose }) => {
       open={!!product}
       onClose={onClose}
       title={name}
+      titleColor="text-emerald-500"
       description={description}
-      image={`/images/urbanfarm-products/${slug}.jpg`}
+      image={`/images/urbanfarm/products/${slug}.jpg`}
+      blurImage={`/images/urbanfarm/products/${slug}-blur.jpg`}
       prices={prices.length > 1 ? prices.map((price) => <>{price}<br /></>) : prices}
       status={status}
       primaryCta={primaryCta}
@@ -96,7 +98,13 @@ const UrbanFarmPage = () => {
         subtitle="Dapatkan sayuran hidroponik yang segar di kebun kami."
         primaryButtonText="Cari sayuran di kebun kami"
       >
-        <Image src="/images/urbanfarm-hero.jpg" layout="fill" objectFit="cover" />
+        <Image
+          src="/images/urbanfarm/urbanfarm-hero.jpg"
+          placeholder="blur"
+          blurDataURL="/images/urbanfarm/urbanfarm-hero-blur.jpg"
+          layout="fill"
+          objectFit="cover"
+        />
       </Hero>
       <section>
         <div className="page-container pt-24 pb-52">
@@ -120,7 +128,8 @@ const UrbanFarmPage = () => {
                   const [firstPrice] = [priceWhole, price100gr, price150gr, price250gr, price500gr, price1kg].filter(Boolean);
                   return (
                     <ProductCard
-                      image={`/images/urbanfarm-products/${v.slug}.jpg`}
+                      image={`/images/urbanfarm/products/${v.slug}.jpg`}
+                      blurImage={`/images/urbanfarm/products/${v.slug}-blur.jpg`}
                       title={v.name}
                       subtitle={`mulai dari Rp ${firstPrice}`}
                       onClick={() => showProduct(v)}
@@ -141,7 +150,8 @@ const UrbanFarmPage = () => {
             <div className="flex-1 flex flex-wrap items-center justify-center">
               {upcomingVeggies.map((v) => (
                 <ProductCard
-                  image={`/images/urbanfarm-products/${v.slug}.jpg`}
+                  image={`/images/urbanfarm/products/${v.slug}.jpg`}
+                  blurImage={`/images/urbanfarm/products/${v.slug}-blur.jpg`}
                   title={v.name}
                   subtitle={`Tersedia ${format(parseISO(v.availableFrom), 'd MMMM yyyy', { locale: id })}`}
                   onClick={() => showProduct(v)}
@@ -157,7 +167,8 @@ const UrbanFarmPage = () => {
           <div className="flex-1 flex flex-wrap items-center justify-center">
             {veggies.map((v) => (
               <ProductCard
-                image={`/images/urbanfarm-products/${v.slug}.jpg`}
+                image={`/images/urbanfarm/products/${v.slug}.jpg`}
+                blurImage={`/images/urbanfarm/products/${v.slug}-blur.jpg`}
                 title={v.name}
                 onClick={() => showProduct(v)}
               />
@@ -167,7 +178,13 @@ const UrbanFarmPage = () => {
       </section>
       <section className="relative h-max">
         <div className="absolute inset-0 -z-10">
-          <Image src="/images/urbanfarm-how-to.jpg" objectFit="cover" layout="fill" />
+          <Image
+            src="/images/urbanfarm/urbanfarm-how-to.jpg"
+            placeholder="blur"
+            blurDataURL="/images/urbanfarm/urbanfarm-how-to-blur.jpg"
+            objectFit="cover"
+            layout="fill"
+          />
         </div>
         <div className="bg-neutral-800/80 h-max">
           <div className="page-container text-center text-white py-24">
