@@ -2,7 +2,9 @@ import { format, isFuture, isPast, parseISO } from "date-fns";
 import { id } from "date-fns/locale";
 import Head from "next/head";
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
+import { useCallback, useEffect, useLayoutEffect, useState } from "react";
+import WhatsAppButton from "../assets/WhatsAppButton";
 import BenefitIcon from "../components/BenefitIcon";
 import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
@@ -44,13 +46,25 @@ const UrbanFarmProductModal = ({ product, onClose }) => {
   let secondaryCta;
   if (isPast(parseISO(availableFrom)) && isFuture(parseISO(availableUntil))) {
     status = <span className="text-emerald-500">Stok masih tersedia</span>;
-    primaryCta = <button className="btn-emerald-primary">Pesan sekarang</button>;
+    primaryCta = (
+      <WhatsAppButton className="btn-emerald-primary" message={`Hai, saya ingin memesan ${name}.`}>
+        Pesan sekarang
+      </WhatsAppButton>
+    );
   } else if (isFuture(parseISO(availableFrom))) {
     status = <span className="text-neutral-600">Segera tersedia {format(parseISO(availableFrom), 'd MMMM yyyy', { locale: id })}</span>;
-    secondaryCta = <button className="btn-emerald-secondary">Tanya ketersediaan lebih lanjut</button>;
+    secondaryCta = (
+      <WhatsAppButton className="btn-emerald-secondary" message={`Hai, saya ingin tahu ketersediaan ${name}.`}>
+        Tanya ketersediaan lebih lanjut
+      </WhatsAppButton>
+    );
   } else {
     status = <span className="text-red-800">Stok kosong</span>;
-    secondaryCta = <button className="btn-emerald-secondary">Pesan untuk pre-order</button>;
+    secondaryCta = (
+      <WhatsAppButton className="btn-emerald-secondary" message={`Hai, apakah bisa pre-order ${name}?`}>
+        Pesan untuk pre-order
+      </WhatsAppButton>
+    );
   }
 
   return (
@@ -82,7 +96,16 @@ const UrbanFarmPage = () => {
 
   const showProduct = useCallback((product) => setActiveProduct(product), []);
 
-  const hideProduct  = useCallback(() => setActiveProduct(null), []);
+  const hideProduct = useCallback(() => setActiveProduct(null), []);
+
+  const scrollToAvailableVeggies = useCallback(() => {
+    const elem = document.querySelector('#sayur-tersedia');
+    const rect = elem.getBoundingClientRect();
+    window.scrollTo({
+      top: rect.top - 64,
+      behavior: 'smooth'
+    })
+  }, [])
 
   return (
     <>
@@ -96,7 +119,11 @@ const UrbanFarmPage = () => {
         color="emerald"
         title="Sayur segar setiap hari"
         subtitle="Dapatkan sayuran hidroponik yang segar di kebun kami."
-        primaryButtonText="Cari sayuran di kebun kami"
+        primaryButton={(
+          <button className="btn-emerald-primary" onClick={scrollToAvailableVeggies}>
+            Cari sayuran di kebun kami
+          </button>
+        )}
       >
         <Image
           src="/images/urbanfarm/urbanfarm-hero.jpg"
@@ -116,7 +143,7 @@ const UrbanFarmPage = () => {
           </div>
         </div>
       </section>
-      <section className="bg-emerald-50">
+      <section id="sayur-tersedia" className="bg-emerald-50">
         <div className="page-container py-24 flex">
           <div className="flex-1">
             <h1 className="text-left text-emerald-500 mb-12">Sayuran Tersedia</h1>
@@ -203,9 +230,9 @@ const UrbanFarmPage = () => {
                   Kebun kami buka setiap hari pukul 07:00 – 09:00 dan/atau 15:30 – 17:30.<br />
                   <b>Harap buat janji</b> terlebih dahulu sebelum datang ke kebun
                 </p>
-                <button className="btn-emerald-secondary">
+                <WhatsAppButton className="btn-emerald-secondary" message="Halo, saya ingin berkunjung ke kebun Asteraeco tanggal ... jam ...">
                   Buat janji kunjungan ke kebun
-                </button>
+                </WhatsAppButton>
               </div>
               <i className="px-20">atau</i>
               <div className="flex-1 flex-col items-center">

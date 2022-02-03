@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
+import WhatsAppButton from "../assets/WhatsAppButton";
 import BenefitIcon from "../components/BenefitIcon";
 import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
@@ -35,8 +35,16 @@ const EcoprintPage = () => {
         color="orange"
         title="Ecoprint unik untuk semua"
         subtitle="Tampil cantik dan unik tanpa merusak lingkungan."
-        primaryButtonText="Cari produk tersedia"
-        secondaryButtonText="Buat produk sendiri"
+        primaryButton={(
+          <a role="button" href="https://www.tokopedia.com/asteraecoid" target="_blank" rel="noopener noreferrer" className="btn-orange-primary">
+            Cari produk tersedia
+          </a>
+        )}
+        secondaryButton={(
+          <WhatsAppButton className="btn-orange-secondary" message="Hai, bisa memesan custom order ecoprint?">
+            Buat produkmu sendiri
+          </WhatsAppButton>
+        )}
       >
         <Image
           src="/images/ecoprint/ecoprint-hero.jpg"
@@ -189,11 +197,9 @@ const EcoprintPage = () => {
               <p className="mb-8">
                 Kunjungi etalase lengkap produk asteraeco.id di
               </p>
-              <Link href="https://www.tokopedia.com/asteraecoid">
-                <a className="block relative w-full h-10">
-                  <Image src="/images/tokopedia.png" alt="tokopedia" priority layout="fill" objectFit="contain" />
-                </a>
-              </Link>
+              <a href="https://www.tokopedia.com/asteraecoid" target="_blank" rel="noopener noreferrer" className="block relative w-full h-10">
+                <Image src="/images/tokopedia.png" alt="tokopedia" priority layout="fill" objectFit="contain" />
+              </a>
             </div>
             <div className="flex-1 flex-col items-center py-4 px-12">
               <h2 className="text-orange-50 mb-6">
@@ -202,9 +208,9 @@ const EcoprintPage = () => {
               <p className="mb-8">
                 Kamu bisa memesan produk asteraeco.id secara custom
               </p>
-              <button className="btn-orange-secondary">
+              <WhatsAppButton className="btn-orange-secondary" message="Hai, bisa memesan custom order ecoprint?">
                 Hubungi kami untuk custom order
-              </button>
+              </WhatsAppButton>
             </div>
           </div>
         </div>

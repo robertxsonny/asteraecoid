@@ -42,25 +42,25 @@
   }
 
   button, a[role=button] {
-    @apply text-[0.875rem] rounded-lg p-3 font-semibold text-sm tracking-wider drop-shadow-sm hover:drop-shadow-lg transition-all
+    @apply text-[0.875rem] rounded-lg p-3 font-semibold text-center text-sm tracking-wider drop-shadow-sm hover:drop-shadow-lg transition-all
   }
 }
 
 @tailwind components;
 @layer components {
-  button.btn-emerald-primary {
+  button.btn-emerald-primary, a[role=button].btn-emerald-primary {
     @apply bg-emerald-500 text-emerald-50
   }
   
-  button.btn-emerald-secondary {
+  button.btn-emerald-secondary, a[role=button].btn-emerald-secondary {
     @apply bg-emerald-50 text-emerald-500
   }
 
-  button.btn-orange-primary {
+  button.btn-orange-primary, a[role=button].btn-orange-primary {
     @apply bg-orange-700 text-orange-50
   }
 
-  button.btn-orange-secondary {
+  button.btn-orange-secondary, a[role=button].btn-orange-secondary {
     @apply bg-orange-50 text-orange-700
   }
 }

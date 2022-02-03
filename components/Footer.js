@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import WhatsAppButton from "../assets/WhatsAppButton";
 
 const FooterLink = ({ children, href }) => {
   const { pathname } = useRouter();
@@ -43,7 +44,9 @@ const Footer = () => {
           <p className="mb-2">
             Ingin bertanya lebih lanjut, memesan produk, atau mengunjungi kebun kami?
           </p>
-          <button className="btn-emerald-primary mb-8">Hubungi kami via WhatsApp</button>
+          <WhatsAppButton message="Halo, saya ingin bertanya mengenai..." className="btn-emerald-primary inline-block mb-8">
+            Hubungi kami via WhatsApp
+          </WhatsAppButton>
           <hr className="border-0 border-t border-neutral-500 text-transparent py-4" />
           <p>
             © {(new Date()).getFullYear()}  asteraeco.id
