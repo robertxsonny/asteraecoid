@@ -35,7 +35,7 @@ const ProductModal = ({ open, title, titleColor, description, prices, image, blu
               <Image alt={title} className="w-full h-full rounded-lg overflow-clip" src={image} layout="fill" objectFit="cover" {...placeholderProps} />
             </div>
             <div className="md:flex-1">
-              <p className="text-neutral-800 text-base font-bold">
+              <p className="text-neutral-800 text-base mt-4 md:mt-0 font-bold">
                 {prices}
               </p>
               <Dialog.Description className="mr-4 my-6 text-neutral-600">{description}</Dialog.Description>

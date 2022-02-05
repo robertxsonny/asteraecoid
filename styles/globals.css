@@ -41,6 +41,10 @@
     @apply text-sm
   }
 
+  a[role=button] {
+    @apply inline-block
+  }
+
   button, a[role=button] {
     @apply text-[0.875rem] rounded-lg p-3 font-semibold text-center text-sm tracking-wider drop-shadow-sm hover:drop-shadow-lg transition-all
   }
