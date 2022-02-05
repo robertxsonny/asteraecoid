@@ -135,8 +135,8 @@ const UrbanFarmPage = () => {
         />
       </Hero>
       <section>
-        <div className="page-container pt-24 pb-52">
-          <div className="flex justify-between">
+        <div className="page-container lg:pb-52">
+          <div className="flex flex-col-mobile justify-center">
             <BenefitIcon color="emerald" title="100% alami" subtitle="Terbuat dari bahan alami dan ramah lingkungan" />
             <BenefitIcon color="emerald" title="100% alami" subtitle="Terbuat dari bahan alami dan ramah lingkungan" />
             <BenefitIcon color="emerald" title="100% alami" subtitle="Terbuat dari bahan alami dan ramah lingkungan" />
@@ -144,13 +144,13 @@ const UrbanFarmPage = () => {
         </div>
       </section>
       <section id="sayur-tersedia" className="bg-emerald-50">
-        <div className="page-container py-24 flex">
+        <div className="page-container flex-col-mobile flex">
           <div className="flex-1">
-            <h1 className="text-left text-emerald-500 mb-12">Sayuran Tersedia</h1>
+            <h1 className="text-center lg:text-left text-emerald-500 mb-12">Sayuran Tersedia</h1>
           </div>
           <div className="flex-1">
             {(availableVeggies.length > 0) ? (
-              <div className="flex flex-wrap items-start content-end -mt-36 -mb-12">
+              <div className="flex flex-wrap items-stretch justify-center lg:justify-end -mx-4 lg:mx-0 lg:-mt-36 -mb-12">
                 {availableVeggies.map((v) => {
                   const { priceWhole, price100gr, price150gr, price250gr, price500gr, price1kg } = v;
                   const [firstPrice] = [priceWhole, price100gr, price150gr, price250gr, price500gr, price1kg].filter(Boolean);
@@ -174,7 +174,7 @@ const UrbanFarmPage = () => {
       </section>
       {(upcomingVeggies.length > 0) && (
         <section className="bg-neutral-100">
-          <div className="page-container py-24">
+          <div className="page-container">
             <h1 className="text-center text-emerald-500 mb-12">Segera Tersedia</h1>
             <div className="flex-1 flex flex-wrap items-center justify-center">
               {upcomingVeggies.map((v) => (
@@ -192,7 +192,7 @@ const UrbanFarmPage = () => {
         </section>
       )}
       <section>
-        <div className="page-container py-24">
+        <div className="page-container narrow">
           <h1 className="text-center text-emerald-500 mb-12">Sayuran lainnya di kebun kami</h1>
           <div className="flex-1 flex flex-wrap items-center justify-center">
             {veggies.map((v) => (
@@ -219,9 +219,9 @@ const UrbanFarmPage = () => {
           />
         </div>
         <div className="bg-neutral-800/80 h-max">
-          <div className="page-container text-center text-white py-24">
-            <p className="mb-24">Bagaimana saya bisa mendapatkan sayuran tersebut</p>
-            <div className="flex items-center">
+          <div className="page-container text-center text-white">
+            <p className="mb-12 lg:mb-24">Bagaimana saya bisa mendapatkan sayuran tersebut?</p>
+            <div className="flex flex-col-mobile items-center">
               <div className="flex-1 flex-col items-center">
                 <h2 className="text-emerald-50 mb-6">
                   Datang dan petik sendiri dari kebun kami
@@ -234,7 +234,7 @@ const UrbanFarmPage = () => {
                   Buat janji kunjungan ke kebun
                 </WhatsAppButton>
               </div>
-              <i className="px-20">atau</i>
+              <i className="p-16">...atau...</i>
               <div className="flex-1 flex-col items-center">
                 <h2 className="text-emerald-50 mb-6">
                   Kami antar GRATIS* ke rumah kamu

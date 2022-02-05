@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from 'next/link';
+import useBreakpoints from "../hooks/breakpoints";
 
 const classes = {
   emerald: {
@@ -18,6 +19,7 @@ const HomepageCard = ({
   title, subtitle,
   color, link
 }) => {
+  const { lgUp } = useBreakpoints();
   const [active, setActive] = useState(false);
 
   const placeholderProps = blurImage ? {
@@ -25,12 +27,8 @@ const HomepageCard = ({
     blurDataURL: blurImage
   } : {};
 
-  return (
-    <div
-      onMouseEnter={() => setActive(true)}
-      onMouseLeave={() => setActive(false)}
-      className="flex-1 relative"
-    >
+  const content = (
+    <>
       <Image src={image} alt={title} objectFit="cover" layout="fill" {...placeholderProps} />
       <div
         className={`transition-all duration-500 absolute flex flex-col inset-0 p-8 ${active ? classes[color].background : 'bg-neutral-800/70'}`}
@@ -48,7 +46,23 @@ const HomepageCard = ({
           </div>
         </div>
       </div>
+    </>
+  )
+
+  return lgUp ? (
+    <div
+      onMouseEnter={() => setActive(true)}
+      onMouseLeave={() => setActive(false)}
+      className="flex-1 relative"
+    >
+      {content}
     </div>
+  ) : (
+    <Link passHref href={link}>
+      <div className="flex-1 relative">
+        {content}
+      </div>
+    </Link>
   )
 };
 

@@ -5,7 +5,7 @@ import HomepageCard from '../components/HomepageCard'
 
 export default function Home() {
   return (
-    <div className="h-full flex flex-row items-stretch relative">
+    <div className="h-full flex flex-col-mobile items-stretch relative">
       <Head>
         <title>Asteraeco.id</title>
         <meta name="description" content="Ecoprint and Urban Farm in Jogja" />

@@ -3,9 +3,9 @@ import { Disclosure, Transition } from '@headlessui/react';
 const FAQ = ({ color, faqs }) => {
   return (
     <section className="bg-neutral-100">
-      <div className="page-container py-24 flex">
+      <div className="page-container flex flex-col-mobile">
         <div className="flex-1">
-          <h1 className={`text-left ${color === 'emerald' ? 'text-emerald-500' : 'text-orange-700'}`}>FAQ</h1>
+          <h1 className={`text-center mb-4 lg:text-left ${color === 'emerald' ? 'text-emerald-500' : 'text-orange-700'}`}>FAQ</h1>
         </div>
         <div className="flex-[2]">
           {(faqs && faqs.length > 0) && faqs.map(({ question, answer }, index) => (

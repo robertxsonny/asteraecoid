@@ -18,8 +18,8 @@ const FooterLink = ({ children, href }) => {
 const Footer = () => {
   return (
     <section className="bg-yellow-50">
-      <div className="page-container pt-24 flex">
-        <div className="flex-1 pr-6">
+      <div className="page-container lg:pb-0 flex">
+        <div className="hidden lg:block lg:flex-1 lg:pr-6">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.5047294385326!2d110.38522891444354!3d-7.736163078823267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59926c0716eb%3A0x72d810f058d68ca!2sasteraeco.id!5e0!3m2!1sen!2sid!4v1643277535367!5m2!1sen!2sid"
             className="border-0 w-full h-[500px] rounded-t-lg drop-shadow-2xl"
@@ -27,7 +27,7 @@ const Footer = () => {
             loading="lazy"
           />
         </div>
-        <div className="flex-1 pl-6">
+        <div className="flex-1 flex flex-col items-center text-center lg:items-start lg:text-left lg:pl-6">
           <Image src="/images/asteraeco-text-only.png" alt="asteraeco" priority width="175" height="56" objectFit="contain" />
           <p className="font-bold my-4">
             Jl. Pusung II, Banteng, Sinduharjo, Sleman Regency, Special Region of Yogyakarta
@@ -36,12 +36,12 @@ const Footer = () => {
             Buka setiap hari (appointment by WA)<br />
             07:00 – 09:00 dan/atau 15:30 – 17:30
           </p>
-          <nav className="flex my-10">
+          <nav className="flex flex-col-mobile my-10">
             <FooterLink href="/ecoprint">Ecoprint</FooterLink>
             <FooterLink href="/urban-farm">Urban Farm</FooterLink>
             <FooterLink href="/about-us">About Us</FooterLink>
           </nav>
-          <p className="mb-2">
+          <p className="mb-4">
             Ingin bertanya lebih lanjut, memesan produk, atau mengunjungi kebun kami?
           </p>
           <WhatsAppButton message="Halo, saya ingin bertanya mengenai..." className="btn-emerald-primary inline-block mb-8">

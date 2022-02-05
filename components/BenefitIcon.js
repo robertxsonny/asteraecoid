@@ -11,7 +11,7 @@ const benefitClasses = {
 
 const BenefitIcon = ({ color, title, subtitle }) => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center m-4">
       <div className={`rounded-full w-32 h-32 ${benefitClasses[color].iconBg}`}>
   
       </div>

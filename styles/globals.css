@@ -14,11 +14,11 @@
   }
 
   h1 {
-    @apply text-4xl
+    @apply text-[2rem] lg:text-4xl
   }
 
   h2 {
-    @apply text-[2rem]
+    @apply text-3xl lg:text-[2rem]
   }
 
   h3 {
@@ -68,10 +68,14 @@
 @tailwind utilities;
 @layer utilities {
   .page-container {
-    @apply container max-w-5xl
+    @apply container max-w-5xl py-16 lg:py-24 lg:px-12
   }
 
   .page-container.narrow {
     @apply max-w-3xl
+  }
+
+  .flex-col-mobile {
+    @apply flex-col lg:flex-row
   }
 }

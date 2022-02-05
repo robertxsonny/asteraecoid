@@ -20,19 +20,19 @@ export default function Hero({
 }) {
   return (
     <section>
-      <div className="page-container flex items-end my-24">
-        <div className="flex-1 max-w-md">
-          <div className={`mr-8 mb-8`}>
-            <h1 className={`text-5xl ${heroClasses[color].headerColor}`}>{title}</h1>
+      <div className="page-container flex flex-col-mobile items-stretch lg:items-end py-16 lg:py-24">
+        <div className="lg:flex-1 lg:max-w-md">
+          <div className="lg:mr-8 mb-8 text-center lg:text-left">
+            <h1 className={`text-4xl sm:text-5xl ${heroClasses[color].headerColor}`}>{title}</h1>
             <p className="my-6">{subtitle}</p>
-            <div className="flex space-x-2">
+            <div className="flex flex-col md:flex-row justify-center lg:justify-start space-y-2 md:space-y-0 md:space-x-2">
               {primaryButton}
               {secondaryButton}
             </div>
           </div>
         </div>
-        <div className="flex-1">
-          <div className="ml-8 w-full rounded-md aspect-video relative overflow-clip -z-10">
+        <div className="lg:flex-1 flex flex-col items-center">
+          <div className="mt-8 lg:mt-0 lg:ml-8 w-full max-w-lg rounded-md aspect-video relative overflow-clip -z-10">
             {children}
           </div>
         </div>
