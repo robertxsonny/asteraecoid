@@ -31,24 +31,26 @@ export default function Header({ }) {
       <div className="page-container bg-white z-30 relative !py-0 h-full flex justify-start md:justify-between items-center">
         {!mdUp && (
           <Menu>
-            <Menu.Button>
+            <Menu.Button className="!shadow-none">
               <MenuIcon className="text-emerald-500 h-6 w-6" />
             </Menu.Button>
-            <Transition
-              className="absolute top-16 left-0 right-0"
-              enter="transition ease duration-200"
-              enterFrom="transform -translate-y-full opacity-0"
-              enterTo="transform translate-y-0 opacity-1"
-              leave="transition ease-in duration-200"
-              leaveFrom="transform translate-y-0 opacity-1"
-              leaveTo="transform -translate-y-full opacity-0"
-            >
-              <Menu.Items as="nav" className="bg-white drop-shadow-lg p-6 w-full z-20">
-                <Menu.Item className="px-4 py-2"><NavItem href="/ecoprint">Ecoprint</NavItem></Menu.Item>
-                <Menu.Item className="px-4 py-2"><NavItem href="/urban-farm">Urban Farm</NavItem></Menu.Item>
-                <Menu.Item className="px-4 py-2"><NavItem href="/about-us">About Us</NavItem></Menu.Item>
-              </Menu.Items>
-            </Transition>
+            <div className="absolute top-16 pb-4 left-0 right-0 overflow-clip">
+              <Transition
+                className="w-full"
+                enter="transition ease-out duration-200"
+                enterFrom="transform -translate-y-[120%] opacity-0"
+                enterTo="transform translate-y-0 opacity-1"
+                leave="transition ease-in duration-200"
+                leaveFrom="transform translate-y-0 opacity-1"
+                leaveTo="transform -translate-y-[120%] opacity-0"
+              >
+                <Menu.Items as="nav" className="bg-white drop-shadow-lg p-6 w-full z-20">
+                  <Menu.Item className="px-4 py-2"><NavItem href="/ecoprint">Ecoprint</NavItem></Menu.Item>
+                  <Menu.Item className="px-4 py-2"><NavItem href="/urban-farm">Urban Farm</NavItem></Menu.Item>
+                  <Menu.Item className="px-4 py-2"><NavItem href="/about-us">About Us</NavItem></Menu.Item>
+                </Menu.Items>
+              </Transition>
+            </div>
           </Menu>
         )}
         <Link href="/">

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import SocialLink from "../assets/SocialLink";
 import WhatsAppButton from "../assets/WhatsAppButton";
 
 const FooterLink = ({ children, href }) => {
@@ -18,11 +19,11 @@ const FooterLink = ({ children, href }) => {
 const Footer = () => {
   return (
     <section className="bg-yellow-50">
-      <div className="page-container lg:pb-0 flex">
+      <div className="page-container lg:pb-0 flex items-stretch">
         <div className="hidden lg:block lg:flex-1 lg:pr-6">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.5047294385326!2d110.38522891444354!3d-7.736163078823267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59926c0716eb%3A0x72d810f058d68ca!2sasteraeco.id!5e0!3m2!1sen!2sid!4v1643277535367!5m2!1sen!2sid"
-            className="border-0 w-full h-[500px] rounded-t-lg drop-shadow-2xl"
+            className="border-0 w-full h-[600px] -mt-8 rounded-t-lg drop-shadow-2xl"
             allowFullScreen
             loading="lazy"
           />
@@ -36,6 +37,18 @@ const Footer = () => {
             Buka setiap hari (appointment by WA)<br />
             07:00 – 09:00 dan/atau 15:30 – 17:30
           </p>
+          <div className="flex justify-center lg:justify-start space-x-2 mt-4">
+            <SocialLink
+              iconUrl="https://img.icons8.com/ios-glyphs/48/464646/instagram-circle.png"
+              iconAlt="Instagram icon by Icons8"
+              href="https://www.instagram.com/asteraeco.id/"
+            />
+            <SocialLink
+              iconUrl="https://img.icons8.com/ios-glyphs/48/464646/facebook-new.png"
+              iconAlt="Facebook icon by Icons8"
+              href="https://www.facebook.com/asteraeco.id/"
+            />
+          </div>
           <nav className="flex flex-col-mobile my-10">
             <FooterLink href="/ecoprint">Ecoprint</FooterLink>
             <FooterLink href="/urban-farm">Urban Farm</FooterLink>

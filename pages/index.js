@@ -14,6 +14,8 @@ export default function Home() {
       <HomepageCard
         image="/images/ecoprint/ecoprint-home.jpg"
         blurImage="/images/ecoprint/ecoprint-home-blur.jpg"
+        iconUrl="https://img.icons8.com/ios-glyphs/96/262626/three-leaf-clover.png"
+        iconAlt="Three Leaf Clover icon by Icons8"
         title="Ecoprint"
         color="orange"
         subtitle="Pakaian dan kerajinan yang dibuat dengan teknik ecoprint yang ramah lingkungan."
@@ -22,6 +24,8 @@ export default function Home() {
       <HomepageCard
         image="/images/urbanfarm/urbanfarm-home.jpg"
         blurImage="/images/urbanfarm/urbanfarm-home-blur.jpg"
+        iconUrl="https://img.icons8.com/ios-glyphs/96/262626/hydropponics.png"
+        iconAlt="Hydropponics icon by Icons8"
         title="Urban Farm"
         color="emerald"
         subtitle="Kebun sayuran berbasis hidroponik yang alami, segar, dan hemat air dalam perawatannya."

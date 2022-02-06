@@ -17,7 +17,8 @@ const classes = {
 const HomepageCard = ({
   image, blurImage,
   title, subtitle,
-  color, link
+  color, link,
+  iconUrl, iconAlt
 }) => {
   const { lgUp } = useBreakpoints();
   const [active, setActive] = useState(false);
@@ -33,8 +34,20 @@ const HomepageCard = ({
       <div
         className={`transition-all duration-500 absolute flex flex-col inset-0 p-8 ${active ? classes[color].background : 'bg-neutral-800/70'}`}
       >
-        <div className="flex-1" />
-        <h1 className={`text-center text-[1.75rem] ${active ? 'text-neutral-800' : 'text-yellow-50'} uppercase my-2 transition-all duration-500`}>
+        <div className="flex-1 flex items-end justify-center">
+          {iconUrl && (
+            <Image
+              className={`transition-all duration-500 ${active ? 'opacity-1' : 'opacity-0'} mb-16`}
+              src={iconUrl}
+              alt={iconAlt}
+              width={72}
+              height={72}
+              objectFit="contain"
+              priority
+            />
+          )}
+        </div>
+        <h1 className={`text-center text-[1.75rem] ${active ? 'text-neutral-800' : 'text-yellow-50'} uppercase my-4 transition-all duration-500`}>
           {title}
         </h1>
         <div className="flex-1">

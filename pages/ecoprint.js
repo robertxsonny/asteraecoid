@@ -129,9 +129,27 @@ const EcoprintPage = () => {
         <div className="page-container">
           <h1 className="text-center text-orange-700 mb-12">Mengapa harus beralih ke ecoprint?</h1>
           <div className="flex flex-col-mobile justify-between">
-            <BenefitIcon color="orange" title="100% alami" subtitle="Terbuat dari bahan alami dan ramah lingkungan" />
-            <BenefitIcon color="orange" title="100% alami" subtitle="Terbuat dari bahan alami dan ramah lingkungan" />
-            <BenefitIcon color="orange" title="100% alami" subtitle="Terbuat dari bahan alami dan ramah lingkungan" />
+            <BenefitIcon
+              iconUrl="https://img.icons8.com/ios-glyphs/96/843800/hand-planting-1.png"
+              iconAlt="Hand Planting icon by Icons8"
+              color="orange"
+              title="Eco-friendly Material"
+              subtitle="Menggunakan bahan 100% alami yang tidak merusak lingkungan."
+            />
+            <BenefitIcon
+              iconUrl="https://img.icons8.com/ios-glyphs/96/843800/time-machine--v2.png"
+              iconAlt="Time Machine icon by Icons8"
+              color="orange"
+              title="Everlasting Fashion"
+              subtitle="Motif dan gaya produk kami tak akan lekang oleh waktu."
+            />
+            <BenefitIcon
+              iconUrl="https://img.icons8.com/ios-glyphs/96/843800/best-seller.png"
+              iconAlt="Best Seller icon by Icons8"
+              color="orange"
+              title="Handmade &amp; Exclusive"
+              subtitle="100% buatan tangan dan motif yang berbeda-beda di setiap produk kami."
+            />
           </div>
         </div>
       </section>

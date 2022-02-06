@@ -164,9 +164,27 @@ const UrbanFarmPage = () => {
       <section>
         <div className="page-container lg:pb-52">
           <div className="flex flex-col-mobile justify-center">
-            <BenefitIcon color="emerald" title="100% alami" subtitle="Terbuat dari bahan alami dan ramah lingkungan" />
-            <BenefitIcon color="emerald" title="100% alami" subtitle="Terbuat dari bahan alami dan ramah lingkungan" />
-            <BenefitIcon color="emerald" title="100% alami" subtitle="Terbuat dari bahan alami dan ramah lingkungan" />
+            <BenefitIcon
+              iconUrl="https://img.icons8.com/ios-glyphs/96/135440/deadly-spray.png"
+              iconAlt="Insecticide icon by Icons8"
+              color="emerald"
+              title="No Pesticide"
+              subtitle="Tanpa bahan kimia yang dapat merusak kandungan nutrisi sayuran."
+            />
+            <BenefitIcon
+              iconUrl="https://img.icons8.com/ios-glyphs/96/135440/seeding.png"
+              iconAlt="Seeding icon by Icons8"
+              color="emerald"
+              title="Non GMO"
+              subtitle="Sayuran kami ditanam secara alami sesuai habitatnya."
+            />
+            <BenefitIcon
+              iconUrl="https://img.icons8.com/ios-glyphs/96/135440/water.png"
+              iconAlt="Water icon by Icons8"
+              color="emerald"
+              title="Save Water"
+              subtitle="Menggunakan air yang bersirkulasi 24 jam tanpa perlu penyiraman."
+            />
           </div>
         </div>
       </section>
