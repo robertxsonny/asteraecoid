@@ -1,7 +1,7 @@
 import { Dialog } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/solid";
 import Image from "next/image";
-import useBreakpoints from "../hooks/breakpoints";
+import { useBreakpoints } from "../hooks/breakpoints";
 
 const ProductModal = ({ open, title, titleColor, description, prices, image, blurImage, status, onClose, primaryCta, secondaryCta }) => {
   const { mdUp } = useBreakpoints();

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Image from "next/image";
-import useBreakpoints from '../hooks/breakpoints';
+import { useBreakpoints } from '../hooks/breakpoints';
 import { Menu, Transition } from '@headlessui/react';
 import { MenuIcon } from '@heroicons/react/solid';
 
@@ -16,7 +16,7 @@ function NavItem({ children, href }) {
 
   return (
     <Link href={href}>
-      <a className={`block h-9 pt-3 text-sm border-b-2 md:ml-8 transition-colors duration-300 uppercase tracking-wider ${dynamicClasses}`}>
+      <a className={`block h-9 pt-3 text-sm border-b-2 md:ml-8 hover:!no-underline uppercase tracking-wider ${dynamicClasses}`}>
         {children}
       </a>
     </Link>

@@ -41,12 +41,16 @@
     @apply text-sm
   }
 
+  a {
+    @apply font-semibold hover:underline  default-transition
+  }
+
   a[role=button] {
-    @apply inline-block
+    @apply inline-block hover:no-underline
   }
 
   button, a[role=button] {
-    @apply text-[0.875rem] rounded-lg p-3 font-semibold text-center text-sm tracking-wider drop-shadow-sm hover:drop-shadow-lg transition-all
+    @apply text-[0.875rem] rounded-lg p-3 font-semibold text-center text-sm tracking-wider default-shadow
   }
 }
 
@@ -71,6 +75,27 @@
 
 @tailwind utilities;
 @layer utilities {
+  .default-transition {
+    @apply transition-all duration-300 ease-linear
+  }
+
+  .default-shadow {
+    @apply shadow-neutral-400/50 shadow-md hover:shadow-lg hover:shadow-neutral-400/70 default-transition
+  }
+  
+  .default-shadow.lighter-shadow {
+    @apply shadow-neutral-300/50 hover:shadow-neutral-300/70
+  }
+
+
+  .default-shadow.darker-shadow {
+    @apply shadow-neutral-500/50 hover:shadow-neutral-500/70
+  }
+
+  .default-shadow.darkest-shadow {
+    @apply shadow-neutral-600/50 hover:shadow-neutral-600/70
+  }
+
   .page-container {
     @apply container max-w-5xl py-16 lg:py-24 lg:px-12
   }

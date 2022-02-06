@@ -16,16 +16,43 @@ import veggies from "../urbanfarm-product.json";
 
 const faqs = [
   {
-    question: 'Apakah sayuran di asteraeco.id termasuk sayur organik?',
-    answer: 'Sayuran kami termasuk sayur organik'
+    question: 'Apa itu hidroponik?',
+    answer: (
+      <>
+        Hidroponik adalah system tanam yang menggunakan air mengalir sebagai media utamanya. Bisa dengan cara NFT atau DFT.<br /><br />
+        NFT (Nutrient film technique) adalah system yang mengandalkan kemiringan media tanam untuk air terus mengalir membawa nutrisi kepada tanaman.
+        DFT (Deep flow technique) adalah system yang mengandalkan genangan air didalam media tanam untuk tanaman bisa menyerap nutrisi.
+        Kedua system tersebut punya kekurangan dan kelebihan masing-masing tapi punya media utama yang sama yaitu air.
+      </>
+    )
   },
   {
-    question: 'Apakah sayuran di asteraeco.id termasuk sayur organik?',
-    answer: 'Sayuran kami termasuk sayur organik'
+    question: 'Mengapa hidropinik harus menggunakan air?',
+    answer: `
+      Air di sistem hidroponik ini berperan penting karena berfungsi sebagai media pembawa nutrisi dan oksigen untuk tumbuh kembang tanaman.
+      Air di sini juga harus dijaga suhu dan PH air nya untuk tanaman bisa menyerap dengan optimal nutrisi yang diberikan.
+    `
   },
   {
-    question: 'Apakah sayuran di asteraeco.id termasuk sayur organik?',
-    answer: 'Sayuran kami termasuk sayur organik'
+    question: 'Benarkah hidroponik hemat air dan lahan?',
+    answer: `
+      Sistem hidroponik adalah solusi untuk lahan yang sudah semakin sepit. Tidak butuh lahan yang besar, bahkan tembok dinding pun bisa dijadikan media tanam.
+      Sistem hidroponik ini pun hemat dalam pengunaan air karena tidak ada penyiraman ketanaman dan air hanya bersikulasi dari tandon air ke media tanam berputar selama 24 jam membawa nutrisi yang dibutuhkan tanaman.
+    `
+  },
+  {
+    question: 'Apakah sayuran di asteraeco.id ini bebas pestisida?',
+    answer: `
+      Kebun kami tidak menggunakan pestisida kimia karna bisa merusak kandungan dan manfaat yang baik dalam sayur/buah dan juga tidak baik untuk tubuh manusia.
+      Kami menggunakan bawang putih untuk mengendalian hama dengan cara menaruh bawang putih tersebut disekitar sayur/buah. Dan juga menggunakan yellow trap untuk serangga.
+    `
+  },
+  {
+    question: 'Apakah sayuran di asteraeco.id ini alami dan bukan rekayasa genetik (GMO)?',
+    answer: `
+      Sayuran di kebun kami menggunakan benih yang tumbuh sesuai dengan habitatnya dan menggunakan takaran pupuk yang sesuai dengan kebutuhan tanaman
+      Kami tidak melakukan rekayasa genetik dengan memaksakan tanaman bisa tumbuh di luar habitatnya. Seperti contoh selada iceberg yang hanya bisa tumbuh optimal dengan cropping daun bagus diketinggian 900meter diatas permukaan laut.
+    `
   }
 ]
 
@@ -230,7 +257,7 @@ const UrbanFarmPage = () => {
                   Kebun kami buka setiap hari pukul 07:00 – 09:00 dan/atau 15:30 – 17:30.<br />
                   <b>Harap buat janji</b> terlebih dahulu sebelum datang ke kebun
                 </p>
-                <WhatsAppButton className="btn-emerald-secondary" message="Halo, saya ingin berkunjung ke kebun Asteraeco tanggal ... jam ...">
+                <WhatsAppButton className="btn-emerald-secondary darkest-shadow" message="Halo, saya ingin berkunjung ke kebun Asteraeco tanggal ... jam ...">
                   Buat janji kunjungan ke kebun
                 </WhatsAppButton>
               </div>

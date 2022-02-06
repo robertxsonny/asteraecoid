@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import useBreakpoints from "../hooks/breakpoints";
+import { useBreakpoints } from "../hooks/breakpoints";
 
 const AboutUsPage = () => {
   const { smUp } = useBreakpoints();
@@ -45,7 +45,7 @@ const AboutUsPage = () => {
       </Head>
       <Header />
       <section>
-        <div className="page-container pt-12 pb-24 flex">
+        <div className="page-container !pt-6 flex">
           <div className="flex-1">
             <div className="aspect-square sm:aspect-[3/4] relative overflow-clip rounded-t-full rounded-b-lg">
               <Image

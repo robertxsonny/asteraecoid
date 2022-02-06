@@ -1,27 +1,71 @@
 import Head from "next/head";
 import Image from "next/image";
+import ResponsiveImage from "../assets/ResponsiveImage";
 import WhatsAppButton from "../assets/WhatsAppButton";
 import BenefitIcon from "../components/BenefitIcon";
 import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import useBreakpoints from "../hooks/breakpoints";
+import { useBreakpoints } from "../hooks/breakpoints";
 
 const faqs = [
   {
-    question: 'Apakah sayuran di asteraeco.id termasuk sayur organik?',
-    answer: 'Sayuran kami termasuk sayur organik'
+    question: 'Bagaimana cara memesan produk ecoprint dari asteraeco.id?',
+    answer: (
+      <>
+        Produk-produk kami bisa anda pesan melalui <a href={`https://wa.me?${process.env.NEXT_PUBLIC_WA_NUMBER}`} target="_blank" rel="noopener noreferrer">Whatsapp</a>,
+        atau langsung mengunjungi halaman toko online kami di <a href="https://www.tokopedia.com/asteraecoid" target="_blank" rel="noopener noreferrer">Tokopedia</a>.
+      </>
+    )
   },
   {
-    question: 'Apakah sayuran di asteraeco.id termasuk sayur organik?',
-    answer: 'Sayuran kami termasuk sayur organik'
+    question: 'Apakah ada toko offline/penjualan offline?',
+    answer: (
+      <>
+        Anda bisa mengunjungi workshop kami <a href="https://goo.gl/maps/4EF92YR4euZsmQ8j7" target="_blank" rel="noopener noreferrer">di sini</a> atau
+        cek <a href="https://www.instagram.com/asteraeco.id" target="_blank" rel="noopener noreferrer">Instagram kami</a> untuk informasi pameran/pasar penjualan offline.
+      </>
+    )
   },
   {
-    question: 'Apakah sayuran di asteraeco.id termasuk sayur organik?',
-    answer: 'Sayuran kami termasuk sayur organik'
+    question: 'Saya ingin memesan produk tetapi sudah out of stock, apakah produknya akan restock?',
+    answer: `
+      Asteraeco.id hanya memiliki satu stock di setiap produknya dan tidak akan ada restock.
+      Maka dari itu, kami sarankan untuk segera check out di toko online kami atau langsung 
+    `
+  },
+  {
+    question: 'Apakah saya bisa belajar ecoprint di asteraeco.id?',
+    answer: `
+      Untuk saat ini Asteraeco.id melayani workshop kain dan kertas ecoprint secara offline.
+      Anda bisa menghubungi kami via Whatsapp untuk informasi lebih lanjut.  
+    `
   }
 ]
+
+const EcoPrintCategory = ({ title, description }) => {
+  return (
+    <div className="w-full lg:w-1/3 m-8 lg:m-0 p-4 text-center lg:text-left">
+      <h3 className="text-orange-700 mb-3 px-4">{title}</h3>
+      <p className="text-neutral-600 text-sm px-4">{description}</p>
+    </div>
+  )
+}
+
+const EcoPrintGalleryItem = ({ src, alt }) => {
+  return (
+    <div className="w-1/2 lg:w-1/3 aspect-square relative">
+      <ResponsiveImage
+        src={src}
+        alt={alt}
+        layout="fill"
+        blur
+        objectFit="cover"
+      />
+    </div>
+  )
+}
 
 const EcoprintPage = () => {
   const { lgUp } = useBreakpoints();
@@ -44,7 +88,7 @@ const EcoprintPage = () => {
           </a>
         )}
         secondaryButton={(
-          <WhatsAppButton className="btn-orange-secondary" message="Hai, bisa memesan custom order ecoprint?">
+          <WhatsAppButton className="btn-orange-secondary lighter-shadow" message="Hai, bisa memesan custom order ecoprint?">
             Buat produkmu sendiri
           </WhatsAppButton>
         )}
@@ -95,94 +139,16 @@ const EcoprintPage = () => {
         <div className="page-container narrow pt-24 pb-40">
           <h1 className="text-center text-orange-700 mb-16">Lini produk kami</h1>
           <div className="flex flex-wrap items-center lg:bg-orange-50">
-            <div className="w-full lg:w-1/3 m-8 lg:m-0 p-4 text-center lg:text-left">
-              <h3 className="text-orange-700 mb-3 px-4">Apparel</h3>
-              <p className="text-neutral-600 text-sm px-4">
-                Atasan, bawahan, outer, dan aksesoris wanita.
-              </p>
-            </div>
-            <div className="w-1/2 lg:w-1/3 aspect-square relative">
-              <Image
-                src="/images/ecoprint/ecoprint-apparel-1.jpg"
-                alt="apparel"
-                layout="fill"
-                placeholder="blur"
-                blurDataURL="/images/ecoprint/ecoprint-apparel-1-blur.jpg"
-                objectFit="cover"
-              />
-            </div>
-            <div className="w-1/2 lg:w-1/3 aspect-square relative">
-              <Image
-                src="/images/ecoprint/ecoprint-apparel-2.jpg"
-                alt="apparel"
-                layout="fill"
-                placeholder="blur"
-                blurDataURL="/images/ecoprint/ecoprint-apparel-2-blur.jpg"
-                objectFit="cover"
-              />
-            </div>
-            {!lgUp && (
-              <div className="w-full lg:w-1/3 m-8 lg:m-0 p-4 text-center lg:text-left">
-                <h3 className="text-orange-700 mb-3 px-4">Fabric</h3>
-                <p className="text-neutral-600 text-sm px-4">
-                  Tersedia kain ecoprint utuh maupun kain ecoprint untuk hijab &amp; pashmina
-                </p>
-              </div>
-            )}
-            <div className="w-1/2 lg:w-1/3 aspect-square relative">
-              <Image
-                src="/images/ecoprint/ecoprint-fabric-1.jpg"
-                alt="fabric"
-                layout="fill"
-                placeholder="blur"
-                blurDataURL="/images/ecoprint/ecoprint-fabric-1-blur.jpg"
-                objectFit="cover"
-              />
-            </div>
-            <div className="w-1/2 lg:w-1/3 aspect-square relative">
-              <Image
-                src="/images/ecoprint/ecoprint-fabric-2.jpg"
-                alt="fabric"
-                layout="fill"
-                placeholder="blur"
-                blurDataURL="/images/ecoprint/ecoprint-fabric-2-blur.jpg"
-                objectFit="cover"
-              />
-            </div>
-            {lgUp && (
-              <div className=" w-full lg:w-1/3 m-8 lg:m-0 p-4 text-center lg:text-left">
-                <h3 className="text-orange-700 mb-3 px-4">Fabric</h3>
-                <p className="text-neutral-600 text-sm px-4">
-                  Tersedia kain ecoprint utuh maupun kain ecoprint untuk hijab &amp; pashmina
-                </p>
-              </div>
-            )}
-            <div className="w-full lg:w-1/3 p-4 m-8 lg:m-0 text-center lg:text-left">
-              <h3 className="text-orange-700 mb-3 px-4">Home Decor</h3>
-              <p className="text-neutral-600 text-sm px-4">
-                Gelas, mini bag, pigura, gantungan kunci, dan pernak pernik lainnya.
-              </p>
-            </div>
-            <div className="w-1/2 lg:w-1/3 aspect-square relative">
-              <Image
-                src="/images/ecoprint/ecoprint-home-decor-1.jpg"
-                alt="home decor"
-                layout="fill"
-                placeholder="blur"
-                blurDataURL="/images/ecoprint/ecoprint-home-decor-1-blur.jpg"
-                objectFit="cover"
-              />
-            </div>
-            <div className="w-1/2 lg:w-1/3 aspect-square relative">
-              <Image
-                src="/images/ecoprint/ecoprint-home-decor-2.jpg"
-                alt="home decor"
-                layout="fill"
-                placeholder="blur"
-                blurDataURL="/images/ecoprint/ecoprint-home-decor-2-blur.jpg"
-                objectFit="cover"
-              />
-            </div>
+            <EcoPrintCategory title="Apparel" description="Atasan, bawahan, outer, dan aksesoris wanita." />
+            <EcoPrintGalleryItem src="/images/ecoprint/ecoprint-apparel-1.jpg" alt="apparel" />
+            <EcoPrintGalleryItem src="/images/ecoprint/ecoprint-apparel-2.jpg" alt="apparel" />
+            {!lgUp && <EcoPrintCategory title="Fabric" description="Tersedia kain ecoprint utuh maupun kain ecoprint untuk hijab &amp; pashmina" />}
+            <EcoPrintGalleryItem src="/images/ecoprint/ecoprint-fabric-1.jpg" alt="apparel" />
+            <EcoPrintGalleryItem src="/images/ecoprint/ecoprint-fabric-2.jpg" alt="apparel" />
+            {lgUp && <EcoPrintCategory title="Fabric" description="Tersedia kain ecoprint utuh maupun kain ecoprint untuk hijab &amp; pashmina" />}
+            <EcoPrintCategory title="Home Decor" description="Gelas, mini bag, pigura, gantungan kunci, dan pernak pernik lainnya" />
+            <EcoPrintGalleryItem src="/images/ecoprint/ecoprint-home-decor-1.jpg" alt="apparel" />
+            <EcoPrintGalleryItem src="/images/ecoprint/ecoprint-home-decor-2.jpg" alt="apparel" />
           </div>
         </div>
       </section>
@@ -217,7 +183,7 @@ const EcoprintPage = () => {
               <p className="mb-8">
                 Kamu bisa memesan produk asteraeco.id secara custom
               </p>
-              <WhatsAppButton className="btn-orange-secondary" message="Hai, bisa memesan custom order ecoprint?">
+              <WhatsAppButton className="btn-orange-secondary darkest-shadow" message="Hai, bisa memesan custom order ecoprint?">
                 Hubungi kami untuk custom order
               </WhatsAppButton>
             </div>

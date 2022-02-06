@@ -28,7 +28,7 @@ export default function Home() {
         link="/urban-farm"
       />
       <Link href="/about-us" passHref >
-        <div className="bg-yellow-50 drop-shadow-xl z-10 w-32 h-32 rounded-full block absolute top-1/2 right-1/2 translate-x-2/4 -translate-y-2/4 cursor-pointer">
+        <div className="bg-yellow-50 default-shadow darkest-shadow z-10 w-32 h-32 rounded-full block absolute top-1/2 right-1/2 translate-x-2/4 -translate-y-2/4 cursor-pointer">
           <div className="m-2 w-28 h-28 relative">
             <Image alt="asteraeco" src="/images/asteraeco-round.png" priority className="p-4" objectFit="cover" layout="fill" />
           </div>

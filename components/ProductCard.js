@@ -8,7 +8,7 @@ const ProductCard = ({ image, blurImage, title, subtitle, onClick }) => {
 
   return (
     <div className="w-48 max-w-[50%]">
-      <div onClick={onClick} className="bg-white drop-shadow-lg hover:drop-shadow-xl cursor-pointer rounded-lg overflow-clip m-2 lg:m-4">
+      <div onClick={onClick} className="bg-white default-shadow cursor-pointer rounded-lg overflow-clip m-2 lg:m-4">
         <div className="aspect-[4/3] w-full relative">
           <Image src={image} alt={title} layout="fill" objectFit="cover" {...placeholderProps} />
         </div>
