@@ -26,11 +26,11 @@ const ProductModal = ({ open, title, titleColor, description, prices, image, blu
         <div className="rounded-lg bg-white p-8 h-max max-h-full w-full max-w-3xl mx-auto flex flex-col">
           <div className="flex justify-between items-start">
             <Dialog.Title className={`mr-4 ${titleColor || 'text-neutral-800'}`}>{title}</Dialog.Title>
-            <button className="p-2 rounded-full -mt-2 text-xs bg-transparent hover:bg-gray-50" onClick={onClose}>
+            <button className="p-2 rounded-full shadow-none -mt-2 text-xs bg-transparent hover:bg-gray-50" onClick={onClose}>
               <XIcon className="text-neutral-600 h-5 w-5" />
             </button>
           </div>
-          <div className="flex-1 md:flex md:flex-row-reverse md:items-stretch mt-4 overflow-scroll">
+          <div className="flex-1 md:flex md:flex-row-reverse md:items-stretch mt-4 overflow-auto">
             <div className="md:flex-1 relative aspect-[4/3] md:aspect-square">
               <Image alt={title} className="w-full h-full rounded-lg overflow-clip" src={image} layout="fill" objectFit="cover" {...placeholderProps} />
             </div>

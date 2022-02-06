@@ -240,7 +240,7 @@ const UrbanFarmPage = () => {
         <div className="page-container narrow">
           <h1 className="text-center text-emerald-500 mb-12">Sayuran lainnya di kebun kami</h1>
           <div className="flex-1 flex flex-wrap items-center justify-center">
-            {veggies.map((v) => (
+            {veggies.sort((a, b) => (a.name - b.name)).map((v) => (
               <ProductCard
                 key={v.slug}
                 image={`/images/urbanfarm/products/${v.slug}.jpg`}

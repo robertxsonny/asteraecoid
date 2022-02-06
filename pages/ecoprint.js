@@ -32,7 +32,7 @@ const faqs = [
     question: 'Saya ingin memesan produk tetapi sudah out of stock, apakah produknya akan restock?',
     answer: `
       Asteraeco.id hanya memiliki satu stock di setiap produknya dan tidak akan ada restock.
-      Maka dari itu, kami sarankan untuk segera check out di toko online kami atau langsung 
+      Maka dari itu, kami sarankan untuk segera check out di toko online kami atau langsung menghubungi kami via Whatsapp untuk mengecek stock barang.
     `
   },
   {
