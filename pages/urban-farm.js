@@ -17,41 +17,50 @@ import veggies from "../urbanfarm-product.json";
 const faqs = [
   {
     question: 'Apa itu hidroponik?',
+    answer: 'Hidroponik merupakan sistem tanam yang menggunakan air mengalir sebagai media utamanya. Bisa dengan cara NFT atau DFT.'
+  },
+  {
+    question: 'Apa itu NFT dan DFT dan sistem hidroponik apa yang digunakan oleh kebun asteraeco.id?',
     answer: (
       <>
-        Hidroponik adalah system tanam yang menggunakan air mengalir sebagai media utamanya. Bisa dengan cara NFT atau DFT.<br /><br />
-        NFT (Nutrient film technique) adalah system yang mengandalkan kemiringan media tanam untuk air terus mengalir membawa nutrisi kepada tanaman.
-        DFT (Deep flow technique) adalah system yang mengandalkan genangan air didalam media tanam untuk tanaman bisa menyerap nutrisi.
-        Kedua system tersebut punya kekurangan dan kelebihan masing-masing tapi punya media utama yang sama yaitu air.
+        Nutrient Film Technique (NFT) adalah sistem yang mengandalkan kemiringan media tanam untuk air terus mengalir membawa nutrisi kepada tanaman.<br /><br />
+        Deep Flow Technique (DFT) adalah sistem yang mengandalkan genangan air di dalam media tanam untuk tanaman bisa menyerap nutrisi. Salah satu sistem yang menganut DFT adalah sistem rakit apung.
+        Kedua sistem tersebut punya kekurangan dan kelebihan masing-masing tapi punya media utama yang sama yaitu air.<br /><br />
+        Kebun asteraeco.id sendiri menggunakan NFT sebagai sistem hidroponik kami. Selain pemanfaatan lahan sempit yang optimal, air dan nutrisi digunakan berulang-ulang setelah melewati tanaman.
+        Dengan cara ini air dan nutrisi menjadi lebih hemat.
       </>
     )
   },
   {
     question: 'Mengapa hidropinik harus menggunakan air?',
     answer: `
-      Air di sistem hidroponik ini berperan penting karena berfungsi sebagai media pembawa nutrisi dan oksigen untuk tumbuh kembang tanaman.
-      Air di sini juga harus dijaga suhu dan PH air nya untuk tanaman bisa menyerap dengan optimal nutrisi yang diberikan.
+      Air di sistem hidroponik ini berperan penting, karena berfungsi sebagai media pembawa nutrisi dan oksigen untuk tumbuh kembang tanaman.
+      Suhu dan PH air yang digunakan juga harus selalu dijaga dan dicek secara berkala, agar tanaman bisa menyerap dengan optimal nutrisi yang diberikan.
     `
   },
   {
     question: 'Benarkah hidroponik hemat air dan lahan?',
     answer: `
-      Sistem hidroponik adalah solusi untuk lahan yang sudah semakin sepit. Tidak butuh lahan yang besar, bahkan tembok dinding pun bisa dijadikan media tanam.
-      Sistem hidroponik ini pun hemat dalam pengunaan air karena tidak ada penyiraman ketanaman dan air hanya bersikulasi dari tandon air ke media tanam berputar selama 24 jam membawa nutrisi yang dibutuhkan tanaman.
+      Sistem hidroponik adalah solusi untuk lahan yang sudah semakin sempit. Tidak butuh lahan yang besar, bahkan tembok dinding pun bisa dijadikan “lahan” media tanam.
+      Sistem hidroponik ini hemat dalam penggunaan air, karena tidak ada penyiraman ke tanaman.
+      Air hanya bersirkulasi dari tandon air ke media tanam dan berputar selama 24 jam untuk membawa nutrisi yang dibutuhkan tanaman.
     `
   },
   {
     question: 'Apakah sayuran di asteraeco.id ini bebas pestisida?',
     answer: `
-      Kebun kami tidak menggunakan pestisida kimia karna bisa merusak kandungan dan manfaat yang baik dalam sayur/buah dan juga tidak baik untuk tubuh manusia.
-      Kami menggunakan bawang putih untuk mengendalian hama dengan cara menaruh bawang putih tersebut disekitar sayur/buah. Dan juga menggunakan yellow trap untuk serangga.
+      Kebun kami tidak menggunakan pestisida kimia karena bisa merusak kandungan dan manfaat yang baik dalam sayuran/buah serta bahaya untuk kesehatan tubuh manusia.
+      Kami menggunakan bawang putih untuk pengendalian hama dengan cara menaruh butiran bawang putih tersebut di sekitar lubang tanam sayur/buah.
+      Kami juga memanfaatkan neem oil/minyak nimba yang kami larutkan dalam air lalu disemprotkan di pipa, tembok dan sekitar greenhouse agar bau dari minyak tersebut diharapkan mengusir hama seperti kutu dan tungau (bau neem oil tidak akan menempel di sayuran dan tidak akan memengaruhi rasa sayur/buah yang kami tanam).
+      Sedangkan untuk serangga seperti lalat buah kami menggunakan yellow trap sebagai bentuk pestisida alami kami.
     `
   },
   {
     question: 'Apakah sayuran di asteraeco.id ini alami dan bukan rekayasa genetik (GMO)?',
     answer: `
-      Sayuran di kebun kami menggunakan benih yang tumbuh sesuai dengan habitatnya dan menggunakan takaran pupuk yang sesuai dengan kebutuhan tanaman
-      Kami tidak melakukan rekayasa genetik dengan memaksakan tanaman bisa tumbuh di luar habitatnya. Seperti contoh selada iceberg yang hanya bisa tumbuh optimal dengan cropping daun bagus diketinggian 900meter diatas permukaan laut.
+      GMO adalah Genetically Modified Organism atau rekayasa genetik. Sayuran di kebun kami menggunakan benih yang tumbuh sesuai dengan habitatnya dan menggunakan takaran pupuk yang sesuai dengan kebutuhan tanaman.
+      Kami tidak melakukan rekayasa genetik dengan memaksakan tanaman bisa tumbuh di luar habitatnya. Seperti contoh selada iceberg yang hanya bisa tumbuh optimal dengan cropping daun bagus di ketinggian 900 meter di atas permukaan laut.
+      Maka dari itu, kami pastikan sayuran di asteraeco.id adalah sayuran Non GMO.
     `
   }
 ]
@@ -287,8 +296,8 @@ const UrbanFarmPage = () => {
                 <p>*hanya berlaku untuk jarak pengantaran 5km dari kebun.</p>
                 <ul className="text-left list-disc mx-8 mt-8">
                   <li>Jarak 5-7km, biaya kirim Rp. 5000,00</li>
-                  <li>Jarak 7-10km. biaya kirim Rp. 7000,00</li>
-                  <li>Jarak di atas 10km disarankan menggunakan jasa kurir pengiriman</li>
+                  <li>Jarak 7-10km. biaya kirim Rp. 8000,00</li>
+                  <li>Jarak di atas 10km disarankan menggunakan jasa kurir pengiriman (KGXpress/Gosend/Grabsend)</li>
                 </ul>
               </div>
             </div>
