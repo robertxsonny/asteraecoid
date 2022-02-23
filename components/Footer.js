@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import SocialLink from "../assets/SocialLink";
 import WhatsAppButton from "../assets/WhatsAppButton";
+import { event } from "../utility/ga";
 
 const FooterLink = ({ children, href }) => {
   const { pathname } = useRouter();
@@ -57,7 +58,11 @@ const Footer = () => {
           <p className="mb-4">
             Ingin bertanya lebih lanjut, memesan produk, atau mengunjungi kebun kami?
           </p>
-          <WhatsAppButton message="Halo, saya ingin bertanya mengenai..." className="btn-emerald-primary darker-shadow mb-8">
+          <WhatsAppButton
+            message="Halo, saya ingin bertanya mengenai..."
+            onClick={() => event("ask-general")}
+            className="btn-emerald-primary darker-shadow mb-8"
+          >
             Hubungi kami via WhatsApp
           </WhatsAppButton>
           <hr className="border-0 border-t border-neutral-500 text-transparent py-4" />

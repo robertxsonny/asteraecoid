@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useEffect } from "react";
 import ResponsiveImage from "../assets/ResponsiveImage";
 import WhatsAppButton from "../assets/WhatsAppButton";
 import BenefitIcon from "../components/BenefitIcon";
@@ -8,6 +9,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import { useBreakpoints } from "../hooks/breakpoints";
+import { event, pageview } from "../utility/ga";
 
 const faqs = [
   {
@@ -70,6 +72,10 @@ const EcoPrintGalleryItem = ({ src, alt }) => {
 const EcoprintPage = () => {
   const { lgUp } = useBreakpoints();
 
+  useEffect(() => {
+    pageview('ecoprint');
+  }, [])
+
   return (
     <>
       <Head>
@@ -83,12 +89,23 @@ const EcoprintPage = () => {
         title="Ecoprint unik untuk semua"
         subtitle="Tampil cantik dan unik tanpa merusak lingkungan."
         primaryButton={(
-          <a role="button" href="https://www.tokopedia.com/asteraecoid" target="_blank" rel="noopener noreferrer" className="btn-orange-primary">
+          <a
+            role="button"
+            href="https://www.tokopedia.com/asteraecoid"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-orange-primary"
+            onClick={() => event("open-tokopedia", { source: 'hero' })}
+          >
             Cari produk tersedia
           </a>
         )}
         secondaryButton={(
-          <WhatsAppButton className="btn-orange-secondary lighter-shadow" message="Hai, bisa memesan custom order ecoprint?">
+          <WhatsAppButton
+            className="btn-orange-secondary lighter-shadow"
+            message="Hai, bisa memesan custom order ecoprint?"
+            onClick={() => event("custom-order-ecoprint", { source: 'hero' })}
+          >
             Buat produkmu sendiri
           </WhatsAppButton>
         )}
@@ -190,7 +207,13 @@ const EcoprintPage = () => {
               <p className="mb-8">
                 Kunjungi etalase lengkap produk asteraeco.id di
               </p>
-              <a href="https://www.tokopedia.com/asteraecoid" target="_blank" rel="noopener noreferrer" className="block relative w-full h-10">
+              <a
+                href="https://www.tokopedia.com/asteraecoid"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block relative w-full h-10"
+                onClick={() => event("open-tokopedia", { source: 'page' })}
+              >
                 <Image src="/images/tokopedia.png" alt="tokopedia" priority layout="fill" objectFit="contain" />
               </a>
             </div>
@@ -201,7 +224,11 @@ const EcoprintPage = () => {
               <p className="mb-8">
                 Kamu bisa memesan produk asteraeco.id secara custom
               </p>
-              <WhatsAppButton className="btn-orange-secondary darkest-shadow" message="Hai, bisa memesan custom order ecoprint?">
+              <WhatsAppButton
+                className="btn-orange-secondary darkest-shadow"
+                message="Hai, bisa memesan custom order ecoprint?"
+                onClick={() => event("custom-order-ecoprint", { source: 'page' })}
+              >
                 Hubungi kami untuk custom order
               </WhatsAppButton>
             </div>

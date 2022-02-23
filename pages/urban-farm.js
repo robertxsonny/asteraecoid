@@ -13,6 +13,7 @@ import Hero from "../components/Hero";
 import ProductCard from "../components/ProductCard";
 import ProductModal from "../components/ProductModal";
 import veggies from "../urbanfarm-product.json";
+import { event, pageview } from "../utility/ga";
 
 const faqs = [
   {
@@ -83,21 +84,33 @@ const UrbanFarmProductModal = ({ product, onClose }) => {
   if (isPast(parseISO(availableFrom)) && isFuture(parseISO(availableUntil))) {
     status = <span className="text-emerald-500">Stok masih tersedia</span>;
     primaryCta = (
-      <WhatsAppButton className="btn-emerald-primary" message={`Hai, saya ingin memesan ${name}.`}>
+      <WhatsAppButton
+        className="btn-emerald-primary"
+        onClick={() => event('order-vegetable', { name, status: 'Ready stock' })}
+        message={`Hai, saya ingin memesan ${name}.`}
+      >
         Pesan sekarang
       </WhatsAppButton>
     );
   } else if (isFuture(parseISO(availableFrom))) {
     status = <span className="text-neutral-600">Segera tersedia {format(parseISO(availableFrom), 'd MMMM yyyy', { locale: id })}</span>;
     secondaryCta = (
-      <WhatsAppButton className="btn-emerald-secondary" message={`Hai, saya ingin tahu ketersediaan ${name}.`}>
+      <WhatsAppButton
+        className="btn-emerald-secondary"
+        onClick={() => event('order-vegetable', { name, status: 'Upcoming' })}
+        message={`Hai, saya ingin tahu ketersediaan ${name}.`}
+      >
         Tanya ketersediaan lebih lanjut
       </WhatsAppButton>
     );
   } else {
     status = <span className="text-red-800">Stok kosong</span>;
     secondaryCta = (
-      <WhatsAppButton className="btn-emerald-secondary" message={`Hai, apakah bisa pre-order ${name}?`}>
+      <WhatsAppButton
+        className="btn-emerald-secondary"
+        onClick={() => event('order-vegetable', { name, status: 'Unavailable' })}
+        message={`Hai, apakah bisa pre-order ${name}?`}
+      >
         Pesan untuk pre-order
       </WhatsAppButton>
     );
@@ -126,6 +139,7 @@ const UrbanFarmPage = () => {
   const [activeProduct, setActiveProduct] = useState(null);
 
   useEffect(() => {
+    pageview('urban-farm');
     setAvailableVeggies(veggies.filter((v) => isPast(parseISO(v.availableFrom)) && isFuture(parseISO(v.availableUntil))) || []);
     setUpcomingVeggies(veggies.filter((v) => isFuture(parseISO(v.availableFrom))) || []);
   }, [])
@@ -142,6 +156,24 @@ const UrbanFarmPage = () => {
       behavior: 'smooth'
     })
   }, [])
+
+  const showProductAndTrackEvent = useCallback((product) => {
+    const { name, availableFrom, availableUntil } = product || {};
+
+    showProduct(product);
+
+    let status = '';
+
+    if (isPast(parseISO(availableFrom)) && isFuture(parseISO(availableUntil))) {
+      status = 'Ready Stock';
+    } else if (isFuture(parseISO(availableFrom))) {
+      status = 'Upcoming';
+    } else {
+      status = 'Unavailable';
+    }
+
+    event('view-vegetables', { name, status });
+  }, [showProduct]);
 
   return (
     <>
@@ -215,7 +247,7 @@ const UrbanFarmPage = () => {
                       blurImage={`/images/urbanfarm/products/${v.slug}-blur.jpg`}
                       title={v.name}
                       subtitle={`mulai dari Rp ${firstPrice}`}
-                      onClick={() => showProduct(v)}
+                      onClick={() => showProductAndTrackEvent(v)}
                     />
                   )
                 })}
@@ -238,7 +270,7 @@ const UrbanFarmPage = () => {
                   blurImage={`/images/urbanfarm/products/${v.slug}-blur.jpg`}
                   title={v.name}
                   subtitle={`Tersedia ${format(parseISO(v.availableFrom), 'd MMMM yyyy', { locale: id })}`}
-                  onClick={() => showProduct(v)}
+                  onClick={() => showProductAndTrackEvent(v)}
                 />
               ))}
             </div>
@@ -255,7 +287,7 @@ const UrbanFarmPage = () => {
                 image={`/images/urbanfarm/products/${v.slug}.jpg`}
                 blurImage={`/images/urbanfarm/products/${v.slug}-blur.jpg`}
                 title={v.name}
-                onClick={() => showProduct(v)}
+                onClick={() => showProductAndTrackEvent(v)}
               />
             ))}
           </div>
@@ -284,7 +316,11 @@ const UrbanFarmPage = () => {
                   Kebun kami buka setiap hari pukul 07:00 – 09:00 dan/atau 15:30 – 17:30.<br />
                   <b>Harap buat janji</b> terlebih dahulu sebelum datang ke kebun
                 </p>
-                <WhatsAppButton className="btn-emerald-secondary darkest-shadow" message="Halo, saya ingin berkunjung ke kebun Asteraeco tanggal ... jam ...">
+                <WhatsAppButton
+                  onClick={() => event("make-visit-appointment")}
+                  className="btn-emerald-secondary darkest-shadow"
+                  message="Halo, saya ingin berkunjung ke kebun Asteraeco tanggal ... jam ..."
+                >
                   Buat janji kunjungan ke kebun
                 </WhatsAppButton>
               </div>
