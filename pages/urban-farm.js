@@ -63,6 +63,13 @@ const faqs = [
       Kami tidak melakukan rekayasa genetik dengan memaksakan tanaman bisa tumbuh di luar habitatnya. Seperti contoh selada iceberg yang hanya bisa tumbuh optimal dengan cropping daun bagus di ketinggian 900 meter di atas permukaan laut.
       Maka dari itu, kami pastikan sayuran di asteraeco.id adalah sayuran Non GMO.
     `
+  },
+  {
+    question: 'Apakah ada minimum order jika memesan sayur dari asteraeco.id?',
+    answer: `
+      TIDAK ADA minimum order jika membeli langsung di kebun kami. 
+      Untuk pesanan yang diantar minimum pembelian adalah Rp 10.000
+    `
   }
 ]
 
@@ -262,7 +269,7 @@ const UrbanFarmPage = () => {
         <section className="bg-neutral-100">
           <div className="page-container">
             <h1 className="text-center text-emerald-500 mb-12">Segera Tersedia</h1>
-            <div className="flex-1 flex flex-wrap items-center justify-center">
+            <div className="flex-1 flex flex-wrap items-stretch justify-center">
               {upcomingVeggies.map((v) => (
                 <ProductCard
                   key={v.slug}
@@ -280,7 +287,7 @@ const UrbanFarmPage = () => {
       <section>
         <div className="page-container narrow">
           <h1 className="text-center text-emerald-500 mb-12">Sayuran lainnya di kebun kami</h1>
-          <div className="flex-1 flex flex-wrap items-center justify-center">
+          <div className="flex-1 flex flex-wrap items-stretch justify-center">
             {veggies.sort((a, b) => (a.name - b.name)).map((v) => (
               <ProductCard
                 key={v.slug}
