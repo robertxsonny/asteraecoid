@@ -235,6 +235,20 @@ const EcoprintPage = () => {
           </div>
         </div>
       </section>
+      <section>
+        <div className="page-container flex flex-col items-center">
+          <p className="mb-4 text-center">Ingin tahu lebih banyak tentang kami?</p>
+          <h1 className="text-center text-orange-700 mb-12">Kunjungi kami di...</h1>
+          <div className="relative aspect-square w-full max-w-xs">
+            <Image
+              src="/images/ecoprint/ecoprint-pasar-kita.jpg"
+              alt="ecoprint"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
+        </div>
+      </section>
       <FAQ color="orange" faqs={faqs} />
       <Footer />
     </>
