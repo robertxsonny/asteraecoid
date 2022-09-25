@@ -43,6 +43,36 @@ const faqs = [
       Untuk saat ini Asteraeco.id melayani workshop kain dan kertas ecoprint secara offline.
       Anda bisa menghubungi kami via Whatsapp untuk informasi lebih lanjut.  
     `
+  },
+  {
+    question: 'Apakah ada toko offline/penjualan offline?',
+    answer: (
+      <>
+        Anda bisa menemui produk kami di <a href="https://g.page/SUWATU-by-milandbay?share" target="_blank" rel="noopener noreferrer">Galeri Suwatu By Mil &amp; Bay</a>&nbsp;
+        atau mengunjungi studio kami di sini atau cek Instagram kami untuk informasi pameran/pasar penjualan offline. 
+      </>
+    )
+  },
+  {
+    question: 'Apakah saya bisa belajar ecoprint di asteraeco.id?',
+    answer: (
+      <>
+        Untuk saat ini asteraeco.id melayani workshop secara offline dengan teknik steaming dan pounding.
+        Silahkan check <a href="https://www.instagram.com/asteraeco.id/" target="_blank" rel="noopener noreferrer">Instagram kami</a> untuk update waktu dan lokasinya. 
+        Atau <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA_NUMBER}/?text=${encodeURI('Hai, mau tanya soal offline workshop')}`} target="_blank" rel="noopener noreferrer">chat WhatsApp kami</a>&nbsp;
+        jika membutuhkan private workshop langsung di studio asteraeco.id :&rpar;
+      </>
+    )
+  },
+  {
+    question: 'Apakah bisa mengadakan workshop diluar studio asteraeco.id?',
+    answer: (
+      <>
+        Ya, kami melayani kolaborasi untuk mengadakan workshop di luar studio kami❤️.
+        Untuk info lebih lanjut, bisa langsung mengakses panduan kolaborasi kami&nbsp;
+        <a href="https://drive.google.com/file/d/1lbj8emZVg6OX-36JyyuHprD1N0Y_iBsU/view?usp=sharing" target="_blank" rel="noopener noreferrer">di sini</a>.
+      </>
+    )
   }
 ]
 
