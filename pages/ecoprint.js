@@ -22,15 +22,6 @@ const faqs = [
     )
   },
   {
-    question: 'Apakah ada toko offline/penjualan offline?',
-    answer: (
-      <>
-        Anda bisa mengunjungi workshop kami <a href="https://goo.gl/maps/4EF92YR4euZsmQ8j7" target="_blank" rel="noopener noreferrer">di sini</a> atau
-        cek <a href="https://www.instagram.com/asteraeco.id" target="_blank" rel="noopener noreferrer">Instagram kami</a> untuk informasi pameran/pasar penjualan offline.
-      </>
-    )
-  },
-  {
     question: 'Saya ingin memesan produk tetapi sudah out of stock, apakah produknya akan restock?',
     answer: `
       Asteraeco.id hanya memiliki satu stock di setiap produknya dan tidak akan ada restock.
@@ -38,18 +29,11 @@ const faqs = [
     `
   },
   {
-    question: 'Apakah saya bisa belajar ecoprint di asteraeco.id?',
-    answer: `
-      Untuk saat ini Asteraeco.id melayani workshop kain dan kertas ecoprint secara offline.
-      Anda bisa menghubungi kami via Whatsapp untuk informasi lebih lanjut.  
-    `
-  },
-  {
     question: 'Apakah ada toko offline/penjualan offline?',
     answer: (
       <>
         Anda bisa menemui produk kami di <a href="https://g.page/SUWATU-by-milandbay?share" target="_blank" rel="noopener noreferrer">Galeri Suwatu By Mil &amp; Bay</a>&nbsp;
-        atau mengunjungi studio kami di sini atau cek Instagram kami untuk informasi pameran/pasar penjualan offline. 
+        atau mengunjungi studio kami di sini atau cek <a href="https://www.instagram.com/asteraeco.id" target="_blank" rel="noopener noreferrer">Instagram kami</a> untuk informasi pameran/pasar penjualan offline. 
       </>
     )
   },
@@ -59,8 +43,8 @@ const faqs = [
       <>
         Untuk saat ini asteraeco.id melayani workshop secara offline dengan teknik steaming dan pounding.
         Silahkan check <a href="https://www.instagram.com/asteraeco.id/" target="_blank" rel="noopener noreferrer">Instagram kami</a> untuk update waktu dan lokasinya. 
-        Atau <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA_NUMBER}/?text=${encodeURI('Hai, mau tanya soal offline workshop')}`} target="_blank" rel="noopener noreferrer">chat WhatsApp kami</a>&nbsp;
-        jika membutuhkan private workshop langsung di studio asteraeco.id :&rpar;
+        Atau <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA_NUMBER}/?text=${encodeURI('Hai, mau tanya tentang offline workshop')}`} target="_blank" rel="noopener noreferrer">chat WhatsApp kami</a>&nbsp;
+        jika membutuhkan private workshop langsung di studio asteraeco.id 😊
       </>
     )
   },
