@@ -54,7 +54,7 @@ const faqs = [
       <>
         Ya, kami melayani kolaborasi untuk mengadakan workshop di luar studio kami❤️.
         Untuk info lebih lanjut, bisa langsung mengakses panduan kolaborasi kami&nbsp;
-        <a href="https://drive.google.com/file/d/1lbj8emZVg6OX-36JyyuHprD1N0Y_iBsU/view?usp=sharing" target="_blank" rel="noopener noreferrer">di sini</a>.
+        <a href="https://drive.google.com/drive/folders/1jDpBkvH5-VPvswFyj8wJ863uu3g54B0v?usp=share_link" target="_blank" rel="noopener noreferrer">di sini</a>.
       </>
     )
   }

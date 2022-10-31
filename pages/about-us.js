@@ -123,7 +123,7 @@ const AboutUsPage = () => {
           <h1 className="text-center text-orange-700 mb-4">Ingin berkolaborasi dengan kami?</h1>
           <p className="mb-4 text-lg text-center">
             Download panduan kolaborasi kami&nbsp;
-            <a href="https://drive.google.com/file/d/1lbj8emZVg6OX-36JyyuHprD1N0Y_iBsU/view?usp=sharing" target="_blank" rel="noopener noreferrer">di sini</a>.
+            <a href="https://drive.google.com/drive/folders/1jDpBkvH5-VPvswFyj8wJ863uu3g54B0v?usp=share_link" target="_blank" rel="noopener noreferrer">di sini</a>.
           </p>
         </div>
       </section>
