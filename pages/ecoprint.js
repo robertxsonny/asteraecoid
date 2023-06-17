@@ -203,7 +203,7 @@ const EcoprintPage = () => {
             layout="fill"
           />
         </div>
-        <div className="bg-white/60 h-max text-white text-center">
+        <div className="bg-white/70 h-max text-white text-center">
           <div className="page-container py-24">
             <h2 className="text-orange-700 mb-6">Beli produk kami secara online di...</h2>
             <div className="flex flex-col-mobile items-center lg:items-stretch max-w-md my-0 mx-auto">
@@ -239,7 +239,7 @@ const EcoprintPage = () => {
           </h1>
           <div className="flex flex-col-mobile items-stretch lg:items-start py-8">
             <div className="flex-1 relative m-4 aspect-square">
-              <div className="absolute inset-0 -z-10">
+              <div className="absolute inset-0">
                 <Image
                   src="/images/ecoprint/ecoprint-offline-suwatu.jpg"
                   alt="ecoprint"
@@ -249,14 +249,14 @@ const EcoprintPage = () => {
                   layout="fill"
                 />
               </div>
-              <div className="bg-neutral-800/60 h-full w-full flex items-center justify-center p-12">
+              <div className="bg-neutral-800/70 relative h-full w-full flex items-center justify-center p-12">
                 <h2 className="text-center text-orange-50">
                   Suwatu by Milk & Bay
                 </h2>
               </div>
             </div>
             <div className="flex-1 relative m-4 aspect-square">
-              <div className="absolute inset-0 -z-10">
+              <div className="absolute inset-0">
                 <Image
                   src="/images/ecoprint/ecoprint-offline-artcraft.jpg"
                   alt="ecoprint"
@@ -266,14 +266,14 @@ const EcoprintPage = () => {
                   layout="fill"
                 />
               </div>
-              <div className="bg-neutral-800/60 h-full w-full flex items-center justify-center p-12">
+              <div className="bg-neutral-800/70 relative h-full w-full flex items-center justify-center p-12">
                 <h2 className="text-center text-orange-50">
                   Art Craft & Flower
                 </h2>
               </div>
             </div>
             <div className="flex-1 relative m-4 aspect-square">
-              <div className="absolute inset-0 -z-10">
+              <div className="absolute inset-0">
                 <Image
                   src="/images/ecoprint/ecoprint-offline-pasaraya.jpg"
                   alt="ecoprint"
@@ -283,7 +283,7 @@ const EcoprintPage = () => {
                   layout="fill"
                 />
               </div>
-              <div className="bg-neutral-800/60 h-full w-full flex items-center justify-center p-12">
+              <div className="bg-neutral-800/70 relative h-full w-full flex items-center justify-center p-12">
                 <h2 className="text-center text-orange-50">
                   Jogja Pasaraya
                 </h2>
