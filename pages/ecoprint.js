@@ -106,7 +106,6 @@ const EcoprintPage = () => {
               <Image
                 src="/images/ecoprint/white-logo-big.png"
                 alt="ecoprint"
-                placeholder="blur"
                 width={250}
                 height={250}
               />
