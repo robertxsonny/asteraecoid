@@ -16,7 +16,8 @@
     "price100gr": 5000,
     "price250gr": 12000,
     "price500gr": 20000,
-    "price1kg": 35000
+    "price1kg": 35000,
+    "description": "Sayuran yang masih saudaraan dengan selada Hijau/Red Rapid ini memiliki tekstur yang renyah dan pastinya segar dengan kandungan air yang cukup banyak. Yang membedakan hanyalah bentuk daun yang memanjang dan cocok banget untuk varian olahan Salad Nicoise ataupun digado dengan sambal."
   },
   {
     "id": 3,
@@ -36,7 +37,7 @@
     "price250gr": 15000,
     "price500gr": 28000,
     "price1kg": 50000,
-    "description": "Dijuluki dengan sebutan ratu sayur Dikarenakan memiliki banyak manfaat untuk Kesehatan tubuh. Tinggi nya kandungan vitamin K , A dan C membuat kale curly baik untuk membantu proses pembekuan darah dalam tubuh dan mampu mengikat kalsium yang bermanfaat untuk tulang. Sayuran ini juga baik untuk menurunkan kolesterol dan membantu mengelola diabetes karna kale mengandung banyak serat."
+    "description": "Dijuluki dengan sebutan ratu sayur Dikarenakan memiliki banyak manfaat untuk Kesehatan tubuh. Tinggi nya kandungan vitamin K , A dan C membuat kale curly baik untuk membantu proses pembekuan darah dalam tubuh dan mampu mengikat kalsium yang bermanfaat untuk tulang. Sayuran ini juga baik untuk menurunkan kolesterol dan membantu mengelola diabetes karna kale mengandung banyak serat. Dipanen dengan cara potong batang yang berdaun"
   },
   {
     "id": 5,
@@ -65,7 +66,8 @@
     "price100gr": 5000,
     "price250gr": 12000,
     "price500gr": 22000,
-    "price1kg": 35000
+    "price1kg": 35000,
+    "description": "Salah satu jenis Chinese Vegetable yang memiliki ukuran cukup bagong ketika masa panennya. Daunnya yang lebar berwarna hijau muda dengan batang yang berwarna putih ini cocok banget untuk segala olahan tumisan sayuran ataupun disantap secara mentah. Renyah dan tanpa rasa pahit yang biasa ditemui di dunia persawian."
   },
   {
     "id": 8,
@@ -84,7 +86,8 @@
     "price100gr": 4000,
     "price250gr": 10000,
     "price500gr": 18000,
-    "price1kg": 35000
+    "price1kg": 35000,
+    "description": "Sesuai namanya, tanaman ini memang berasal dari Brazil dan Amerika. Bentuk daunnya yang kriwil, berwarna hijau mengkilap, tektsurnya renyah dan memiliki rasa yang segar tanpa ada rasa langu sangat fleksibel sekali untuk segala macam olahan sajian ataupun dimakan mentah."
   },
   {
     "id": 10,
@@ -93,7 +96,8 @@
     "price100gr": 5000,
     "price250gr": 12000,
     "price500gr": 20000,
-    "price1kg": 35000
+    "price1kg": 35000,
+    "description": "Sayuran dari Jepang ini memiliki rasa seperti wasabi sebagai hint diawal kita konsumsi. Sayur unik ini cocok sebagai pendamping salad teman-teman sekalian."
   },
   {
     "id": 11,
@@ -102,16 +106,18 @@
     "price50gr": 5000,
     "price100gr": 10000,
     "price250gr": 22000,
-    "price500gr": 40000
+    "price500gr": 40000,
+    "description": "Bagi penggemar Italian cuisine, herbs satu ini tidak boleh dilewatkan. Kami menjual jenis Italian Basil yang sangat cocok untuk segala sajian pasta dan pizza, serta bagi teman-teman yang ingin membuat homemade pesto dengan basil segar."
   },
   {
     "id": 12,
-    "name": "Peppermint/Spearmint",
+    "name": "Peppermint (Spearmint)",
     "slug": "peppermint-spearmint",
     "price50gr": 5000,
     "price100gr": 10000,
     "price250gr": 20000,
-    "price500gr": 35000
+    "price500gr": 35000,
+    "description": "Jenis daun mint yang sering digunakan sebagai garnish diberbagai dessert dan beverage cafe."
   },
   {
     "id": 13,
@@ -120,7 +126,8 @@
     "price50gr": 6000,
     "price100gr": 12000,
     "price250gr": 22000,
-    "price500gr": 40000
+    "price500gr": 40000,
+    "description": "Walapun daunnya mirip seperti kemangi, tapi jangan salah ini adalah jenis mint yang kami tanam. Wanginya sangat melegakan pernapasan dan rasanya sangat nyaman ketika dikunyah."
   },
   {
     "id": 14,
@@ -129,7 +136,8 @@
     "price50gr": 6000,
     "price100gr": 12000,
     "price250gr": 22000,
-    "price500gr": 40000
+    "price500gr": 40000,
+    "description": "Jenis daun mint yang satu ini memiliki rasa yang lebih strong dibanding peppermint. Sangat cocok sekali untuk campuran minuman seperti teh ataupun mojito."
   },
   {
     "id": 15,
@@ -138,6 +146,7 @@
     "price50gr": 7000,
     "price100gr": 13000,
     "price250gr": 24000,
-    "price500gr": 40000
+    "price500gr": 40000,
+    "description": "Harga khusus bagi teman-teman yang ingin membeli ketiga jenis mint yang kami miliki."
   }
 ]
