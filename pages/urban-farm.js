@@ -1,15 +1,12 @@
 import { format, isFuture, isPast, parseISO } from "date-fns";
-import { id } from "date-fns/locale";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
-import { useCallback, useEffect, useLayoutEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import WhatsAppButton from "../assets/WhatsAppButton";
 import BenefitIcon from "../components/BenefitIcon";
 import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Hero from "../components/Hero";
 import ProductCard from "../components/ProductCard";
 import ProductModal from "../components/ProductModal";
 import veggies from "../urbanfarm-product.json";
@@ -70,7 +67,17 @@ const faqs = [
       TIDAK ADA minimum order jika membeli langsung di kebun kami. 
       Untuk pesanan yang diantar minimum pembelian adalah Rp 10.000
     `
-  }
+  },
+  {
+    question: 'Saya ada projek kampus nih kak, apakah bisa menjadikan asteraeco.id sebagai objek penelitian/projek saya?',
+    answer: (
+      <>
+        Bagi teman-teman yang sedang mengerjakan tugas kuliah dan membutuhkan objek penelitian
+        boleh sekali menjadikan asteraeco.id sebagai bahan penelitian teman-teman.
+        Namun ada beberapa ketentuan yah, bisa langsung bertanya di <a href={`https://wa.me/${process.env.NEXT_PUBLIC_WA_NUMBER}`} target="_blank" rel="noopener noreferrer">WhatsApp kami</a>.
+      </>
+    )
+  },
 ]
 
 const UrbanFarmProductModal = ({ product, onClose }) => {
@@ -85,44 +92,6 @@ const UrbanFarmProductModal = ({ product, onClose }) => {
     price1kg && `Rp ${price1kg} / 1kg`,
   ].filter(Boolean)
 
-  let status;
-  let primaryCta;
-  let secondaryCta;
-  if (isPast(parseISO(availableFrom)) && isFuture(parseISO(availableUntil))) {
-    status = <span className="text-emerald-500">Stok masih tersedia</span>;
-    primaryCta = (
-      <WhatsAppButton
-        className="btn-emerald-primary"
-        onClick={() => event('order-vegetable', { name, status: 'Ready stock' })}
-        message={`Hai, saya ingin memesan ${name}.`}
-      >
-        Pesan sekarang
-      </WhatsAppButton>
-    );
-  } else if (isFuture(parseISO(availableFrom))) {
-    status = <span className="text-neutral-600">Segera tersedia {format(parseISO(availableFrom), 'd MMMM yyyy', { locale: id })}</span>;
-    secondaryCta = (
-      <WhatsAppButton
-        className="btn-emerald-secondary"
-        onClick={() => event('order-vegetable', { name, status: 'Upcoming' })}
-        message={`Hai, saya ingin tahu ketersediaan ${name}.`}
-      >
-        Tanya ketersediaan lebih lanjut
-      </WhatsAppButton>
-    );
-  } else {
-    status = <span className="text-red-800">Stok kosong</span>;
-    secondaryCta = (
-      <WhatsAppButton
-        className="btn-emerald-secondary"
-        onClick={() => event('order-vegetable', { name, status: 'Unavailable' })}
-        message={`Hai, apakah bisa pre-order ${name}?`}
-      >
-        Pesan untuk pre-order
-      </WhatsAppButton>
-    );
-  }
-
   return (
     <ProductModal
       open={!!product}
@@ -133,36 +102,20 @@ const UrbanFarmProductModal = ({ product, onClose }) => {
       image={`/images/urbanfarm/products/${slug}.jpg`}
       blurImage={`/images/urbanfarm/products/${slug}-blur.jpg`}
       prices={prices.length > 1 ? prices.map((price) => <>{price}<br /></>) : prices}
-      status={status}
-      primaryCta={primaryCta}
-      secondaryCta={secondaryCta}
     />
   )
 }
 
 const UrbanFarmPage = () => {
-  const [availableVeggies, setAvailableVeggies] = useState([]);
-  const [upcomingVeggies, setUpcomingVeggies] = useState([]);
   const [activeProduct, setActiveProduct] = useState(null);
 
   useEffect(() => {
     pageview('urban-farm');
-    setAvailableVeggies(veggies.filter((v) => isPast(parseISO(v.availableFrom)) && isFuture(parseISO(v.availableUntil))) || []);
-    setUpcomingVeggies(veggies.filter((v) => isFuture(parseISO(v.availableFrom))) || []);
   }, [])
 
   const showProduct = useCallback((product) => setActiveProduct(product), []);
 
   const hideProduct = useCallback(() => setActiveProduct(null), []);
-
-  const scrollToAvailableVeggies = useCallback(() => {
-    const elem = document.querySelector('#sayur-tersedia');
-    const rect = elem.getBoundingClientRect();
-    window.scrollTo({
-      top: rect.top - 64,
-      behavior: 'smooth'
-    })
-  }, [])
 
   const showProductAndTrackEvent = useCallback((product) => {
     const { name, availableFrom, availableUntil } = product || {};
@@ -190,27 +143,35 @@ const UrbanFarmPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Hero
-        color="emerald"
-        title="Sayur segar setiap hari"
-        subtitle="Dapatkan sayuran hidroponik yang segar di kebun kami."
-        primaryButton={(
-          <button className="btn-emerald-primary" onClick={scrollToAvailableVeggies}>
-            Cari sayuran di kebun kami
-          </button>
-        )}
-      >
-        <Image
-          src="/images/urbanfarm/urbanfarm-hero.jpg"
-          alt="urban farm"
-          placeholder="blur"
-          blurDataURL="/images/urbanfarm/urbanfarm-hero-blur.jpg"
-          layout="fill"
-          objectFit="cover"
-        />
-      </Hero>
+      <section className="relative h-max">
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/images/urbanfarm/urbanfarm-hero.jpg"
+            alt="urbanfarm"
+            placeholder="blur"
+            blurDataURL="/images/urbanfarm/urbanfarm-hero.jpg"
+            objectFit="cover"
+            layout="fill"
+          />
+        </div>
+        <div className="bg-white/50 h-max">
+          <div className="page-container py-36 flex flex-col items-center">
+            <Image
+              src="/images/urbanfarm/green-logo-big.png"
+              alt="ecoprint"
+              width={250}
+              height={250}
+            />
+            <h1 className="text-center text-emerald-500 mt-12 mb-6">From Farm to Fork</h1>
+            <p className="text-center">
+              Sayuran Segar, Renyah dan Higenis untukmu dan Keluarga
+            </p>
+          </div>
+        </div>
+      </section>
       <section>
         <div className="page-container lg:pb-52">
+          <h1 className="text-center text-emerald-500 mb-12">Kelebihan dari berkebun dengan cara hidroponik</h1>
           <div className="flex flex-col-mobile justify-center">
             <BenefitIcon
               iconUrl="https://img.icons8.com/ios-glyphs/96/135440/deadly-spray.png"
@@ -236,57 +197,33 @@ const UrbanFarmPage = () => {
           </div>
         </div>
       </section>
-      <section id="sayur-tersedia" className="bg-emerald-50">
+      <section className="bg-emerald-50">
         <div className="page-container flex-col-mobile flex">
-          <div className="flex-1">
-            <h1 className="text-center lg:text-left text-emerald-500 mb-12">Sayuran Tersedia</h1>
+          <div className="lg:flex-1 flex flex-col items-center">
+            <div className="mt-8 lg:mt-0 lg:mr-12 w-full max-w-lg rounded-md aspect-video relative overflow-clip">
+              <Image
+                src="/images/urbanfarm/urbanfarm-summary.jpg"
+                alt="urbanfarm"
+                layout="fill"
+                placeholder="blur"
+                blurDataURL="/images/urbanfarm/urbanfarm-summary-blur.jpg"
+                objectFit="cover"
+              />
+            </div>
           </div>
-          <div className="flex-1">
-            {(availableVeggies.length > 0) ? (
-              <div className="flex flex-wrap items-stretch justify-center lg:justify-end -mx-4 lg:mx-0 lg:-mt-36 -mb-12">
-                {availableVeggies.map((v) => {
-                  const { priceWhole, price100gr, price150gr, price250gr, price500gr, price1kg } = v;
-                  const [firstPrice] = [priceWhole, price100gr, price150gr, price250gr, price500gr, price1kg].filter(Boolean);
-                  return (
-                    <ProductCard
-                      key={v.slug}
-                      image={`/images/urbanfarm/products/${v.slug}.jpg`}
-                      blurImage={`/images/urbanfarm/products/${v.slug}-blur.jpg`}
-                      title={v.name}
-                      subtitle={`mulai dari Rp ${firstPrice}`}
-                      onClick={() => showProductAndTrackEvent(v)}
-                    />
-                  )
-                })}
-              </div>
-            ) : (
-              <span className="text-neutral-600">Belum ada sayur tersedia</span>
-            )}
+          <div className="lg:flex-1">
+            <h1 className="text-center lg:text-left text-emerald-500">Tentang &quot;Panen Sendiri Sayuranmu&quot;</h1>
+            <p className="text-center lg:text-left my-6">
+              Slogan &quot;Panen Sendiri Sayuranmu&quot; merupakan ajakan untuk para pelanggan kami untuk datang, memilih dan memetik sayur langsung di kebun kami.
+              Tujuan utama kami adalah para pelanggan yang telah membeli sayuran di kebun kami dapat menyajikan dan menyantap sayuran yang masih renyah, segar serta bersih untuk diri sendiri maupun keluarga.
+              Selain menjadi pengalaman tersendiri, kami juga ingin memberikan edukasi dan informasi mengenai seputar sayuran yang selama ini kita konsumsi.
+            </p>
           </div>
         </div>
       </section>
-      {(upcomingVeggies.length > 0) && (
-        <section className="bg-neutral-100">
-          <div className="page-container">
-            <h1 className="text-center text-emerald-500 mb-12">Segera Tersedia</h1>
-            <div className="flex-1 flex flex-wrap items-stretch justify-center">
-              {upcomingVeggies.map((v) => (
-                <ProductCard
-                  key={v.slug}
-                  image={`/images/urbanfarm/products/${v.slug}.jpg`}
-                  blurImage={`/images/urbanfarm/products/${v.slug}-blur.jpg`}
-                  title={v.name}
-                  subtitle={`Tersedia ${format(parseISO(v.availableFrom), 'd MMMM yyyy', { locale: id })}`}
-                  onClick={() => showProductAndTrackEvent(v)}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
       <section>
         <div className="page-container narrow">
-          <h1 className="text-center text-emerald-500 mb-12">Sayuran lainnya di kebun kami</h1>
+          <h1 className="text-center text-emerald-500 mb-12">List Sayur Mayur di Kebun Kami</h1>
           <div className="flex-1 flex flex-wrap items-stretch justify-center">
             {veggies.sort((a, b) => (a.name - b.name)).map((v) => (
               <ProductCard
@@ -297,6 +234,128 @@ const UrbanFarmPage = () => {
                 onClick={() => showProductAndTrackEvent(v)}
               />
             ))}
+          </div>
+        </div>
+      </section>
+      <section className="bg-emerald-50">
+        <div className="page-container">
+          <h1 className="text-center text-emerald-500 mb-12">Portofolio</h1>
+          <div className=" flex-col-mobile flex">
+            <div className="lg:flex-1 lg:pr-6 lg:border-r lg:border-r-emerald-100">
+              <div className="lg:flex-1 flex flex-row items-center">
+                <div className="mr-2 flex-1 rounded-md aspect-[9/16] relative overflow-clip">
+                  <Image
+                    src="/images/urbanfarm/urbanfarm-portfolio-kompas-1.jpg"
+                    alt="urbanfarm"
+                    layout="fill"
+                    placeholder="blur"
+                    blurDataURL="/images/urbanfarm/urbanfarm-portfolio-kompas-1-blur.jpg"
+                    objectFit="cover"
+                  />
+                </div>
+                <div className="ml-2 flex-1 rounded-md aspect-[9/16] relative overflow-clip">
+                  <Image
+                    src="/images/urbanfarm/urbanfarm-portfolio-kompas-2.jpg"
+                    alt="urbanfarm"
+                    layout="fill"
+                    placeholder="blur"
+                    blurDataURL="/images/urbanfarm/urbanfarm-portfolio-kompas-2-blur.jpg"
+                    objectFit="cover"
+                  />
+                </div>
+              </div>
+              <p className="text-center lg:text-left my-6">
+                Kami mendapatkan sebuah kesempatan untuk menjadi salah satu narasumber di salah satu segmen di surat kabar Kompas, 28 Juni 2022.
+                Untuk artikelnya dapat pula dibaca secara daring di <a href="https://www.kompas.id/baca/gaya-hidup/2022/06/19/kebiasaan-baik-yang-menyehatkan-usus" target="_blank" rel="noopener noreferrer">link berikut ini</a>.
+              </p>
+            </div>
+            <div className="lg:flex-1 lg:pl-6">
+              <div className="lg:flex-1 flex flex-row items-center">
+                <div className="mr-2 flex-1 rounded-md aspect-[9/16] relative overflow-clip">
+                  <Image
+                    src="/images/urbanfarm/urbanfarm-portfolio-csr-1.jpg"
+                    alt="urbanfarm"
+                    layout="fill"
+                    placeholder="blur"
+                    blurDataURL="/images/urbanfarm/urbanfarm-portfolio-csr-1-blur.jpg"
+                    objectFit="cover"
+                  />
+                </div>
+                <div className="ml-2 flex-1 rounded-md aspect-[9/16] relative overflow-clip">
+                  <Image
+                    src="/images/urbanfarm/urbanfarm-portfolio-csr-2.jpg"
+                    alt="urbanfarm"
+                    layout="fill"
+                    placeholder="blur"
+                    blurDataURL="/images/urbanfarm/urbanfarm-portfolio-csr-2-blur.jpg"
+                    objectFit="cover"
+                  />
+                </div>
+              </div>
+              <p className="text-center lg:text-left my-6">
+                Kami mendapatkan kesempatan sebagai mentor dalam rangka program CSR Permata Hati dari Permata Bank dengan tajuk PANENKU Pelatihan Hidroponik untuk Insan Berkemampuan Khusus #berdayadenganhati.
+                Selama 9 pertemuan online dan 2 kali pertemuan secara offline di bulan Sept-Nov 2022 kemarin untuk teman-teman istimewa kami yang berlokasi di Jabodetabek
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="page-container flex-col-mobile flex">
+          <div className="flex flex-col-mobile">
+            <h1 className="lg:flex-1 text-emerald-500 lg:pr-10">Instansi yang Berkunjung ke Kebun Kami</h1>
+            <div className="lg:flex-1 flex flex-col">
+              <div className="m-2 w-full rounded-md aspect-video relative overflow-clip">
+                <Image
+                  src="/images/urbanfarm/urbanfarm-visit-dharmakarini.jpg"
+                  alt="urbanfarm"
+                  layout="fill"
+                  placeholder="blur"
+                  blurDataURL="/images/urbanfarm/urbanfarm-visit-dharmakarini-blur.jpg"
+                  objectFit="cover"
+                />
+              </div>
+              <div className="m-2 w-full rounded-md aspect-video relative overflow-clip">
+                <Image
+                  src="/images/urbanfarm/urbanfarm-visit-imagro.jpg"
+                  alt="urbanfarm"
+                  layout="fill"
+                  placeholder="blur"
+                  blurDataURL="/images/urbanfarm/urbanfarm-visit-imagro-blur.jpg"
+                  objectFit="cover"
+                />
+              </div>
+              <div className="m-2 w-full rounded-md aspect-video relative overflow-clip">
+                <Image
+                  src="/images/urbanfarm/urbanfarm-visit-faperta.jpg"
+                  alt="urbanfarm"
+                  layout="fill"
+                  placeholder="blur"
+                  blurDataURL="/images/urbanfarm/urbanfarm-visit-faperta-blur.jpg"
+                  objectFit="cover"
+                />
+              </div>
+              <div className="m-2 w-full rounded-md aspect-video relative overflow-clip">
+                <Image
+                  src="/images/urbanfarm/urbanfarm-visit-fbeuajy.jpg"
+                  alt="urbanfarm"
+                  layout="fill"
+                  placeholder="blur"
+                  blurDataURL="/images/urbanfarm/urbanfarm-visit-fbeuajy-blur.jpg"
+                  objectFit="cover"
+                />
+              </div>
+              <div className="m-2 w-full rounded-md aspect-video relative overflow-clip">
+                <Image
+                  src="/images/urbanfarm/urbanfarm-visit-lpp.jpg"
+                  alt="urbanfarm"
+                  layout="fill"
+                  placeholder="blur"
+                  blurDataURL="/images/urbanfarm/urbanfarm-visit-lpp-blur.jpg"
+                  objectFit="cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -334,13 +393,16 @@ const UrbanFarmPage = () => {
               <i className="p-16">...atau...</i>
               <div className="flex-1 flex-col items-center">
                 <h2 className="text-emerald-50 mb-6">
-                  Kami antar GRATIS* ke rumah kamu
+                  Kami antar ke rumah kamu
                 </h2>
-                <p>*hanya berlaku untuk jarak pengantaran 5km dari kebun.</p>
                 <ul className="text-left list-disc mx-8 mt-8">
-                  <li>Jarak 5-7km, biaya kirim Rp. 5000,00</li>
-                  <li>Jarak 7-10km. biaya kirim Rp. 8000,00</li>
-                  <li>Jarak di atas 10km disarankan menggunakan jasa kurir pengiriman (KGXpress/Gosend/Grabsend)</li>
+                  <li>Jarak 0-2.5km, biaya kirim GRATIS</li>
+                  <li>Jarak 2.6-4km, biaya kirim Rp. 5000,00</li>
+                  <li>Jarak 4.1-6km, biaya kirim Rp. 7000,00</li>
+                  <li>Jarak 6.1-8km, biaya kirim Rp. 10000,00</li>
+                  <li>Jarak 8.1-10km. biaya kirim Rp. 12000,00</li>
+                  <li>Jarak 10.1-12km. biaya kirim Rp. 15000,00</li>
+                  <li>Jarak di atas 12km disarankan menggunakan jasa kurir pengiriman (KGXpress/Gosend/Grabsend)</li>
                 </ul>
               </div>
             </div>

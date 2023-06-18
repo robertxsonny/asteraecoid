@@ -1,23 +1,12 @@
 import { Dialog } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/solid";
 import Image from "next/image";
-import { useBreakpoints } from "../hooks/breakpoints";
 
-const ProductModal = ({ open, title, titleColor, description, prices, image, blurImage, status, onClose, primaryCta, secondaryCta }) => {
-  const { mdUp } = useBreakpoints();
-
+const ProductModal = ({ open, title, titleColor, description, prices, image, blurImage, onClose }) => {
   const placeholderProps = blurImage ? {
     placeholder: 'blur',
     blurDataURL: blurImage
   } : {};
-
-  const statusAndCtas = (
-    <div className="flex flex-col space-y-2 mt-8 md:mt-0 md:mr-8">
-      {status}
-      {primaryCta}
-      {secondaryCta}
-    </div>
-  )
 
   return (
     <Dialog open={open} onClose={onClose} className="fixed z-10 inset-0 overflow-y-auto">
@@ -39,10 +28,8 @@ const ProductModal = ({ open, title, titleColor, description, prices, image, blu
                 {prices}
               </p>
               <Dialog.Description className="mr-4 my-6 text-neutral-600">{description}</Dialog.Description>
-              {mdUp && statusAndCtas}
             </div>
           </div>
-          {!mdUp && statusAndCtas}
         </div>
       </div>
     </Dialog>
