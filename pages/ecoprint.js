@@ -179,14 +179,14 @@ const EcoprintPage = () => {
         <div className="page-container narrow pt-24 pb-40">
           <h1 className="text-center text-orange-700 mb-16">Lini produk kami</h1>
           <div className="flex flex-wrap items-center lg:bg-orange-50">
-            <EcoPrintCategory title="Fabric & Scarf" description="Terusan kain, pashmina, maupun scarf dengan berbagai macam ukuran." />
+            <EcoPrintCategory title="Fabric & Scarf" description="Temukan kain, pashmina, maupun scarf dengan berbagai macam ukuran." />
             <EcoPrintGalleryItem src="/images/ecoprint/ecoprint-produk-fabric-1.jpg" alt="fabric" />
             <EcoPrintGalleryItem src="/images/ecoprint/ecoprint-produk-fabric-2.jpg" alt="fabric" />
             {!lgUp && <EcoPrintCategory title="Apparel" description="Tersedia berbagai macam jenis sandang untuk penampilan unikmu seperti tank top, t-shirt, outer, dsb." />}
             <EcoPrintGalleryItem src="/images/ecoprint/ecoprint-produk-apparel-1.jpg" alt="apparel" />
             <EcoPrintGalleryItem src="/images/ecoprint/ecoprint-produk-apparel-2.jpg" alt="apparel" />
             {lgUp && <EcoPrintCategory title="Apparel" description="Tersedia berbagai macam jenis sandang untuk penampilan unikmu seperti tank top, t-shirt, outer, dsb." />}
-            <EcoPrintCategory title="Handmade Craft" description="Pernak-pernik manis seperti notebook, bucket, headband, totebag, dsb." />
+            <EcoPrintCategory title="Handmade Craft" description="Pernak-pernik manis seperti notebook, buckethat, headband, totebag, dsb." />
             <EcoPrintGalleryItem src="/images/ecoprint/ecoprint-produk-craft-1.jpg" alt="craft" />
             <EcoPrintGalleryItem src="/images/ecoprint/ecoprint-produk-craft-2.jpg" alt="craft" />
           </div>
@@ -212,17 +212,17 @@ const EcoprintPage = () => {
                   href="https://www.tokopedia.com/asteraecoid"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block relative w-full h-32"
+                  className="block relative w-32 h-32"
                   onClick={() => event("open-tokopedia", { source: 'page' })}
                 >
                   <Image src="/images/ecoprint/tokopedia-logo.png" alt="tokopedia" priority layout="fill" objectFit="contain" />
                 </a>
               </div><div className="flex-1 flex-col items-center px-4 py-12 lg:px-12">
                 <a
-                  href="https://www.shopee.co.id/asteraecoid"
+                  href="https://www.shopee.co.id/artcraftandflower"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block relative w-full h-32"
+                  className="block relative w-32 h-32"
                   onClick={() => event("open-shopee", { source: 'page' })}
                 >
                   <Image src="/images/ecoprint/shopee-logo.png" alt="shopee" priority layout="fill" objectFit="contain" />
@@ -238,7 +238,12 @@ const EcoprintPage = () => {
             Dan temukan produk kami secara offline di...
           </h1>
           <div className="flex flex-col-mobile items-stretch lg:items-start py-8">
-            <div className="flex-1 relative m-4 aspect-square">
+            <a
+              href="https://goo.gl/maps/V8S55PR37WYnQFJT9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-1 relative m-4 aspect-square"
+            >
               <div className="absolute inset-0">
                 <Image
                   src="/images/ecoprint/ecoprint-offline-suwatu.jpg"
@@ -251,11 +256,16 @@ const EcoprintPage = () => {
               </div>
               <div className="bg-neutral-800/70 relative h-full w-full flex items-center justify-center p-12">
                 <h2 className="text-center text-orange-50">
-                  Suwatu by Milk & Bay
+                  Suwatu by Mil & Bay
                 </h2>
               </div>
-            </div>
-            <div className="flex-1 relative m-4 aspect-square">
+            </a>
+            <a
+              href="https://goo.gl/maps/r4UXUhNLUWDNxcqR7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-1 relative m-4 aspect-square"
+            >
               <div className="absolute inset-0">
                 <Image
                   src="/images/ecoprint/ecoprint-offline-artcraft.jpg"
@@ -271,8 +281,13 @@ const EcoprintPage = () => {
                   Art Craft & Flower
                 </h2>
               </div>
-            </div>
-            <div className="flex-1 relative m-4 aspect-square">
+            </a>
+            <a
+              href="https://goo.gl/maps/fYVCAyUP8S9wy84cA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-1 relative m-4 aspect-square"
+            >
               <div className="absolute inset-0">
                 <Image
                   src="/images/ecoprint/ecoprint-offline-pasaraya.jpg"
@@ -288,7 +303,7 @@ const EcoprintPage = () => {
                   Jogja Pasaraya
                 </h2>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
