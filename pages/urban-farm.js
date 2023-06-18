@@ -81,10 +81,11 @@ const faqs = [
 ]
 
 const UrbanFarmProductModal = ({ product, onClose }) => {
-  const { name, description, slug, priceWhole, price100gr, price150gr, price250gr, price500gr, price1kg, availableFrom, availableUntil } = product || {};
+  const { name, description, slug, priceWhole, price50gr, price100gr, price150gr, price250gr, price500gr, price1kg, availableFrom, availableUntil } = product || {};
 
   const prices = [
     priceWhole && `Rp ${priceWhole} / bonggol`,
+    price50gr && `Rp ${price50gr} / 100gr`,
     price100gr && `Rp ${price100gr} / 100gr`,
     price150gr && `Rp ${price150gr} / 150gr`,
     price250gr && `Rp ${price250gr} / 250gr`,
@@ -264,7 +265,8 @@ const UrbanFarmPage = () => {
                   />
                 </div>
               </div>
-              <p className="text-center lg:text-left my-6">
+              <h3 className="text-center my-6">Koran Kompas Edisi Ultah ke-57 (2022)</h3>
+              <p className="text-center lg:text-left my-2">
                 Kami mendapatkan sebuah kesempatan untuk menjadi salah satu narasumber di salah satu segmen di surat kabar Kompas, 28 Juni 2022.
                 Untuk artikelnya dapat pula dibaca secara daring di <a href="https://www.kompas.id/baca/gaya-hidup/2022/06/19/kebiasaan-baik-yang-menyehatkan-usus" target="_blank" rel="noopener noreferrer">link berikut ini</a>.
               </p>
@@ -292,7 +294,8 @@ const UrbanFarmPage = () => {
                   />
                 </div>
               </div>
-              <p className="text-center lg:text-left my-6">
+              <h3 className="text-center my-6">Mentor Hidroponik untuk CSR Permata Hati (2022)</h3>
+              <p className="text-center lg:text-left my-2">
                 Kami mendapatkan kesempatan sebagai mentor dalam rangka program CSR Permata Hati dari Permata Bank dengan tajuk PANENKU Pelatihan Hidroponik untuk Insan Berkemampuan Khusus #berdayadenganhati.
                 Selama 9 pertemuan online dan 2 kali pertemuan secara offline di bulan Sept-Nov 2022 kemarin untuk teman-teman istimewa kami yang berlokasi di Jabodetabek
               </p>

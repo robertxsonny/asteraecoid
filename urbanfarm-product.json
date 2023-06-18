@@ -1,10 +1,37 @@
 [
   {
     "id": 1,
+    "name": "Selada Keriting Hijau/Red Rapid",
+    "slug": "selada-keriting",
+    "price100gr": 4000,
+    "price250gr": 10000,
+    "price500gr": 17000,
+    "price1kg": 30000,
+    "description": "Yang sering makan salad pasti sudah tidak asing dengan sayuran ini. Dicampur mayones, dimakan dengan daging sampai ayam geprek. Rasa segar dan renyah saat dimakan. Enaknya sayuran ini sudah tidak perlu diragukan lagi."
+  },
+  {
+    "id": 2,
+    "name": "Selada Romaine",
+    "slug": "selada-romaine",
+    "price100gr": 5000,
+    "price250gr": 12000,
+    "price500gr": 20000,
+    "price1kg": 35000
+  },
+  {
+    "id": 3,
+    "name": "Selada Butterhead",
+    "slug": "selada-butterhead",
+    "price100gr": 6000,
+    "price250gr": 14000,
+    "price500gr": 28000,
+    "price1kg": 50000,
+    "description": "Bentuknya yang lebih mirip sayur kol. Sayuran ini masih masuk keluarga selada loh. Tekstur yang lembut dan bentuk cropping yang membuat sayuran ini disebut butterhead."
+  },
+  {
+    "id": 4,
     "name": "Kale Curly",
     "slug": "kale-curly",
-    "availableFrom": "2022-03-14",
-    "availableUntil": "2022-03-28",
     "price100gr": 10000,
     "price250gr": 15000,
     "price500gr": 28000,
@@ -12,31 +39,9 @@
     "description": "Dijuluki dengan sebutan ratu sayur Dikarenakan memiliki banyak manfaat untuk Kesehatan tubuh. Tinggi nya kandungan vitamin K , A dan C membuat kale curly baik untuk membantu proses pembekuan darah dalam tubuh dan mampu mengikat kalsium yang bermanfaat untuk tulang. Sayuran ini juga baik untuk menurunkan kolesterol dan membantu mengelola diabetes karna kale mengandung banyak serat."
   },
   {
-    "id": 2,
-    "name": "Sawi Pagoda",
-    "slug": "sawi-pagoda",
-    "price100gr": 4000,
-    "price250gr": 9000,
-    "price500gr": 18000,
-    "price1kg": 35000,
-    "description": "Sayuran cantik ini termasuk dalam keluarga sawi. Sayuran satu ini memiliki bentuk yang unik dengan bentuknya terlihat seperti bunga yang mekar. Mengandung vitamin B kompleks dan protein nabati membuat sayuran ini bagus untuk pembentukan massa otot dan kebugaran tubuh."
-  },
-  {
-    "id": 3,
-    "name": "Naibai",
-    "slug": "naibai",
-    "price100gr": 3000,
-    "price250gr": 7000,
-    "price500gr": 13000,
-    "price1kg": 24000,
-    "description": "Kenalin nih.. nama nya naibai yang bentuknya imut-imut. Masih di kategori keluarga sawi. Sayuran ini biasa diolah menjadi Chinese food. Dimasak dengan paduan jamur dan saus tiram. Rasa nya tidak perlu diragukan lagi."
-  },
-  {
-    "id": 4,
+    "id": 5,
     "name": "Pakcoy",
     "slug": "pakcoy",
-    "availableFrom": "2022-02-23",
-    "availableUntil": "2022-03-09",
     "price100gr": 3000,
     "price250gr": 7000,
     "price500gr": 13000,
@@ -45,44 +50,94 @@
   },
   {
     "id": 6,
-    "name": "Selada Hijau",
-    "slug": "selada-hijau",
-    "availableFrom": "2022-03-14",
-    "availableUntil": "2022-03-28",
-    "price100gr": 3000,
-    "price250gr": 7000,
-    "price500gr": 13000,
-    "price1kg": 25000,
-    "description": "Yang sering makan salad pasti sudah tidak asing dengan sayuran ini. Dicampur mayones, dimakan dengan daging sampai ayam geprek. Rasa segar dan renyah saat dimakan. Enaknya sayuran ini sudah tidak perlu diragukan lagi."
+    "name": "Sawi Pagoda",
+    "slug": "sawi-pagoda",
+    "price100gr": 5000,
+    "price250gr": 12000,
+    "price500gr": 22000,
+    "price1kg": 35000,
+    "description": "Sayuran cantik ini termasuk dalam keluarga sawi. Sayuran satu ini memiliki bentuk yang unik dengan bentuknya terlihat seperti bunga yang mekar. Mengandung vitamin B kompleks dan protein nabati membuat sayuran ini bagus untuk pembentukan massa otot dan kebugaran tubuh."
   },
   {
     "id": 7,
-    "name": "Selada Red Rapid",
-    "slug": "selada-red-rapid",
-    "price100gr": 3000,
-    "price250gr": 7000,
-    "price500gr": 13000,
-    "price1kg": 25000,
-    "description": "Yang sering makan salad pasti sudah tidak asing dengan sayuran ini. Dicampur mayones, dimakan dengan daging sampai ayam geprek. Rasa segar dan renyah saat dimakan. Enaknya sayuran ini sudah tidak perlu diragukan lagi."
+    "name": "Sawi Samhong",
+    "slug": "sawi-samhong",
+    "price100gr": 5000,
+    "price250gr": 12000,
+    "price500gr": 22000,
+    "price1kg": 35000
   },
   {
     "id": 8,
-    "name": "Selada Butterhead",
-    "slug": "selada-butterhead",
+    "name": "Naibai",
+    "slug": "naibai",
     "price100gr": 4000,
     "price250gr": 9000,
-    "price1kg": 35000,
-    "description": "Bentuknya yang lebih mirip sayur kol. Sayuran ini masih masuk keluarga selada loh. Tekstur yang lembut dan bentuk cropping yang membuat sayuran ini disebut butterhead."
+    "price500gr": 16000,
+    "price1kg": 30000,
+    "description": "Kenalin nih.. nama nya naibai yang bentuknya imut-imut. Masih di kategori keluarga sawi. Sayuran ini biasa diolah menjadi Chinese food. Dimasak dengan paduan jamur dan saus tiram. Rasa nya tidak perlu diragukan lagi."
+  },
+  {
+    "id": 9,
+    "name": "Bayam Brazil",
+    "slug": "bayam-brazil",
+    "price100gr": 4000,
+    "price250gr": 10000,
+    "price500gr": 18000,
+    "price1kg": 35000
+  },
+  {
+    "id": 10,
+    "name": "Purple Mizuna",
+    "slug": "mizuna",
+    "price100gr": 5000,
+    "price250gr": 12000,
+    "price500gr": 20000,
+    "price1kg": 35000
   },
   {
     "id": 11,
-    "name": "Bayam Brazil",
-    "slug": "bayam-brazil",
-    "availableFrom": "2022-03-14",
-    "availableUntil": "2022-03-28",
-    "price100gr": 4000,
-    "price250gr": 8000,
-    "price500gr": 15000,
-    "price1kg": 30000
+    "name": "Basil",
+    "slug": "basil",
+    "price50gr": 5000,
+    "price100gr": 10000,
+    "price250gr": 22000,
+    "price500gr": 40000
+  },
+  {
+    "id": 12,
+    "name": "Peppermint/Spearmint",
+    "slug": "peppermint-spearmint",
+    "price50gr": 5000,
+    "price100gr": 10000,
+    "price250gr": 20000,
+    "price500gr": 35000
+  },
+  {
+    "id": 13,
+    "name": "Japanese Menthol",
+    "slug": "japanese-menthol",
+    "price50gr": 6000,
+    "price100gr": 12000,
+    "price250gr": 22000,
+    "price500gr": 40000
+  },
+  {
+    "id": 14,
+    "name": "Blackpepper Mint",
+    "slug": "blackpepper-mint",
+    "price50gr": 6000,
+    "price100gr": 12000,
+    "price250gr": 22000,
+    "price500gr": 40000
+  },
+  {
+    "id": 15,
+    "name": "Mix Mint",
+    "slug": "mix-mint",
+    "price50gr": 7000,
+    "price100gr": 13000,
+    "price250gr": 24000,
+    "price500gr": 40000
   }
 ]
